@@ -1,0 +1,9 @@
+--- 
+# This is a YAML file with different styles of keys
+name: ahmed
+age: 25
+weight: 70
+female: false
+birthday: 1998-01-01
+flaws: null
+...

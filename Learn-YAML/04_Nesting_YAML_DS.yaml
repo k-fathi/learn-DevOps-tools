@@ -1,0 +1,14 @@
+player_games:
+  - name: karim
+    games: 10
+  - name: ahmed
+    games: 20
+  
+  
+player_games2:
+  name: ahmed
+  games: 20
+  years:
+    - 2020
+    - 2021
+    - 2022
