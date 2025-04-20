@@ -17,10 +17,10 @@
 - in case of deletion of file:
     - the data will not be deleted, but the Inodes will be flaged to `free`
  
- ![alt text](image-6.png)
+ ![alt text](screens/image-6.png)
 
 # Links:
-![hard/soft Link](image-7.png)
+![hard/soft Link](screens/image-7.png)
 
 1) Soft/Sympolic Link;
     - a file points to a file points to the inode points to the data block

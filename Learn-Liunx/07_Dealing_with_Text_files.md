@@ -2,7 +2,7 @@
 >``vimtutor`` # Learning vim locally
 
 ## (1) Vim:
->![alt text](image-18.png)
+>![alt text](screens/image-18.png)
 - Vim is enhanced vi
 - vim has `4 modes`:
     1) Command          mode 

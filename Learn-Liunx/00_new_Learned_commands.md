@@ -26,16 +26,16 @@
 
 > ``rm -r /dir/* ``            # to delete the files inside a directory only and keep the directory
 
-> ``rm -i file ``              # to inform me about the action ![alt text](image-4.png)
+> ``rm -i file ``              # to inform me about the action ![alt text](screens/image-4.png)
 
 > ``mv /src  /dest  ``         # no -r for mv
 
-> ``mv -v f0 f1  ``            # ![alt text](image-3.png)
+> ``mv -v f0 f1  ``            # ![alt text](screens/image-3.png)
 
 > ``sudo -i ``                 # login as root without password only if password was stored in buffer      
 
 ## writing commands shortcuts:
-![alt text](image-5.png)
+![alt text](screens/image-5.png)
 --------------------------------------------------------------
 
 # Crazy Files in Linux:

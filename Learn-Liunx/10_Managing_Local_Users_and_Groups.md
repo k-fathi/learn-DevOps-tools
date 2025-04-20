@@ -5,8 +5,8 @@
 
 ## Content of `passwd` file:
 - each line has 7 fields
-> ![alt text](image-48.png)
-> ![alt text](image-43.png)
+> ![alt text](screens/image-48.png)
+> ![alt text](screens/image-43.png)
  
 ## 1- Super User (root)
 - UID = 0
@@ -27,7 +27,7 @@
 >```id```           
 >``id <user>`` # show info about the current user or the given user
 
-> ![alt text](image-29.png)
+> ![alt text](screens/image-29.png)
 
 
 
@@ -43,12 +43,12 @@
 	- -g	  # spicify the primary group id 
 ## Example:
 > ## ``sudo useradd -m -p PasSw0rD -s /bin/bash -c "add user 1" -u 1011 user1``
-> ![alt text](image-40.png)
-> ![alt text](image-41.png)
+> ![alt text](screens/image-40.png)
+> ![alt text](screens/image-41.png)
 
 ## interactive adding user 
 > ## ``adduser <username>``
-> ![alt text](image-42.png) 
+> ![alt text](screens/image-42.png) 
 
 ## IN REDHAT ⛑
 > ## Redhat create the home directory and selech bash shell as the default shell by default
@@ -62,17 +62,17 @@
 	- -u username 							# modify the user ID
 	- -g	new_primary_group user		# change the primary group
 	- -G 	group user						# add the user to secondary group, delete/exit from the other groups
-	- ![alt text](image-46.png)
+	- ![alt text](screens/image-46.png)
 	- -aG groups user						# append to secondary groups
 	- -rG group user						# remove a user from a group
-	- ![alt text](image-47.png)
+	- ![alt text](screens/image-47.png)
 	- -L user								# lock user [!password in shadow file]
 	- -U user								# unlock 	
 	- -s [shell path]						# edit the user shell
 
 - `gpasswd -d user group`	   # to remove a user from a group
 - `passwd <user>`		# to add an encrypted password
-- ![alt text](image-45.png)
+- ![alt text](screens/image-45.png)
 - `groups <user>`		# to display the groups that  the user is member in
 
 
@@ -86,11 +86,11 @@
 
 # Groups
 > `cat /etc/group` # display all groups and its members, primary groups will not be printed.
-- ![alt text](image-32.png)
+- ![alt text](screens/image-32.png)
 
 ### Content of `group` file:
 - each line has 4 fields
-- ![alt text](image-33.png)
+- ![alt text](screens/image-33.png)
 
 
 # `Hwo to create a group?!`

@@ -1,5 +1,5 @@
 # Redirection
-> ![alt text](image-14.png)
+> ![alt text](screens/image-14.png)
 
 ## Describtors:
 ```
@@ -25,4 +25,4 @@
 
 ## Example:
 > ``ls ~ ff 1> out 2> err`` # ff not actually exists
-- ![alt text](image-15.png)
+- ![alt text](screens/image-15.png)

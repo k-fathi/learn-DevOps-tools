@@ -2,7 +2,7 @@
 ## This could be done by two main methods:
    - GUI [ tty2 ] 
       - Used to emulate the tty in CLI 
-      - ![alt text](image.png)
+      - ![alt text](screens/image.png)
       - ``pts``: pesudo screen 
       > ``/dev/pts/1`` 
       > ``/dev/pts/2`` 
