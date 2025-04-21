@@ -37,6 +37,12 @@
 ## writing commands shortcuts:
 ![alt text](screens/image-5.png)
 --------------------------------------------------------------
+# Most important Files in Linux:
+1) /etc/passwd
+2) /etc/group
+3) /etc/login.defs # contain the system predefined variables    
+4) /etc/shadow
+5) /var/log/secure 
 
 # Crazy Files in Linux:
 1) /dev/random          # file contains random content
