@@ -71,6 +71,7 @@
 	- -L user								# lock user [!password in shadow file]
 	- -U user								# unlock 	
 	- -s [shell path]						# edit the user shell
+	- -l newname oldname 					# edit the user name
 
 - `passwd <user>`		# to add an encrypted password
 - look at to the stupid password 👇
