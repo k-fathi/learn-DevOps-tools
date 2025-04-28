@@ -34,6 +34,8 @@
 
 > ``sudo -i ``                 # login as root without password only if password was stored in buffer      
 
+
+> ``!<command>``               # excute the last command starts with `<command> `
 ## writing commands shortcuts:
 ![alt text](screens/image-5.png)
 --------------------------------------------------------------

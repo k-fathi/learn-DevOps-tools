@@ -15,21 +15,21 @@
     chown admin1 file
     ```
     This sets the owner of `file` to `admin1`.
-    > ![alt text](image-85.png)
+    > ![alt text](screens/image-85.png)
 
 2. Change the group of a file:
     ```bash
     chown :Admins file
     ```
     This sets the group of `file` to `Admins`.
-    > ![alt text](image-86.png)
+    > ![alt text](screens/image-86.png)
 
 3. Change both the owner and group of a file:
     ```bash
     chown admin1:Admin1 file
     ```
     This sets the owner to `admin1` and the group to `admin1`.
-    > ![alt text](image-87.png)
+    > ![alt text](screens/image-87.png)
 
 ### Notes:
 
