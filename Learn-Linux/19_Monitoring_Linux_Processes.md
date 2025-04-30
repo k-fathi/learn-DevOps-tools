@@ -6,10 +6,10 @@
 ```bash
 top
 ```
-> ![alt text](image-101.png)
+> ![alt text](screens/image-101.png)
 
 ## Displayed Statistics:
-> ![alt text](image-102.png)
+> ![alt text](screens/image-102.png)
 ### The `top` Content/info:
     1- General info: the hour now, Up Time, login Users, Load average-% @ 1min, 5min, 15min   
     2- Tasks: total, running, sleeping, stopped, zompie
@@ -72,6 +72,14 @@ top
     ```bash
     renice 5 -p 1234
     ```
+
+
+# htop: Interactive process viewer
+> ## `htop` 
+```markdonw
+It  is  similar  to  top, but allows you to scroll vertically and horizontally, and interact using a pointing device (mouse).  You can observe all processes running on the system, along with their command line arguments, as well as view them in a tree format, select multiple processes and acting on them  all  at once.
+```
+> ![alt text](screens/image-103.png)
 
 #### Notes:
 - **Only** the `root` user can set a `negative nice value` (higher priority).
