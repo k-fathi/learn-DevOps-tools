@@ -1,56 +1,88 @@
 
 # Most Important Basic Commands and Options
-> ``Alt + .  ``                # reuse the last argument
 
-> ``ls -lr ``                  # reverse the order ot listing [a-z] 
+## Basic Commands and Their Options
 
-> ``ls -lh ``                  # humanize the sizes of files and directories 
+### System Information
+- **`uptime`**  
+    Display system uptime, users, and load.
 
-> ``cd - ``                    # to return to the last curent working directory 
+- **`lscpu`**  
+    Display information about the `cpu`.
 
-> ``touch file ``              # create a file, if file exists, will modify the timestamp
+### Command Shortcuts
+- **`Alt + .`**  
+    Repeat the last argument.
 
-> ``mkdir -p dir1/dir2  ``     # make two recursive directories
+### File and Directory Operations
+- **`ls -lr`**  
+    Reverse order listing.  
+- **`ls -lh`**  
+    Human-readable sizes.  
+- **`cd -`**  
+    Go to the previous directory.  
+- **`touch file`**  
+    Create or update a file.  
+- **`mkdir -p dir1/dir2`**  
+    Create nested directories.  
+- **`cp -r /src /dest`**  
+    Copy directories without permissions.  
+- **`cp -r -p /src /dest`**  
+    Copy directories with permissions.  
+- **`dd if=<path1> of=<path2> bs=<n>M count=<x>`**  
+    Copy data with block size and count.  
+    ```bash
+    # Example: dd if=/dev/zero of=file.img bs=1M count=100
+    ```  
+- **`rm -r dir`**  
+    Remove directories.  
+- **`rm -r /dir/*`**  
+    Clear directory contents.  
+- **`rm -i file`**  
+    Confirm before deleting.  
+    ![Prompt Example](screens/image-4.png)  
+- **`mv /src /dest`**  
+    Move files or directories.  
+- **`mv -v f0 f1`**  
+    Show move details.  
+    ![Verbose Example](screens/image-3.png)  
 
-> ``cp -r /src  /dest  ``      # must spisify -r to copy "directories" & will copy without preserve the permissions
+### Root and Command History
+- **`sudo -i`**  
+    Open root shell.  
+- **`!<command>`**  
+    Repeat last matching command.  
 
-> ``cp -r -p src  /dest  ``    # must spisify -r to copy "directories" & will copy and preserve the permissions 
+### Writing Command Shortcuts
+![Command Shortcuts](screens/image-5.png)
 
-> ``dd if=<path1> of=<path2> bs=<n>M conut=<x> ``  
-```
-# used to copy the content of a file to another file  
-# copy from path1 to path2 and make the block size (bs) = n MegaByte and count x from this Block
-```
+---
 
-> ``rm -r dir ``               # must spisify -r to remove "directories"      
+# Most Important Files in Linux
 
-> ``rm -r /dir/* ``            # to delete the files inside a directory only and keep the directory
+1. **`/etc/passwd`**  
+     User account details.  
+2. **`/etc/group`**  
+     Group account details.  
+3. **`/etc/login.defs`**  
+     System variables.  
+4. **`/etc/shadow`**  
+     Encrypted passwords.  
+5. **`/var/log/secure`**  
+     Security logs.  
 
-> ``rm -i file ``              # to inform me about the action ![alt text](screens/image-4.png)
+---
 
-> ``mv /src  /dest  ``         # no -r for mv
+# Crazy Files in Linux
 
-> ``mv -v f0 f1  ``            # ![alt text](screens/image-3.png)
-
-> ``sudo -i ``                 # login as root without password only if password was stored in buffer      
-
-
-> ``!<command>``               # excute the last command starts with `<command> `
-## writing commands shortcuts:
-![alt text](screens/image-5.png)
---------------------------------------------------------------
-# Most important Files in Linux:
-1) /etc/passwd
-2) /etc/group
-3) /etc/login.defs # contain the system predefined variables    
-4) /etc/shadow
-5) /var/log/secure 
-
-# Crazy Files in Linux:
-1) /dev/random          # file contains random content
-2) /dev/urandom         # file contains random content
-3) /dev/zero            # file contains only characters "0"
-4) /etc/sudoers         # make you Hulk
-5) /.bashrc             # make your own Linux
-
+1. **`/dev/random`**  
+     Random content file.  
+2. **`/dev/urandom`**  
+     Random content file.  
+3. **`/dev/zero`**  
+     File with "0" characters.  
+4. **`/etc/sudoers`**  
+     Superuser privileges.  
+5. **`~/.bashrc`**  
+     Customize environment.  
 

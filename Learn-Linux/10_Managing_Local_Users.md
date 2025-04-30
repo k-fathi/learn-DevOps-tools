@@ -44,7 +44,7 @@
 ## Example:
 > ## ``sudo useradd -m -p PasSw0rD -s /bin/bash -c "add user 1" -u 1011 user1``
 > ![alt text](screens/image-40.png)
-- see the unencrypted password! 👇
+## see the unencrypted password! 👇
 > ![alt text](screens/image-41.png)
 
 ## interactive adding user 
@@ -53,9 +53,9 @@
 
 ## IN REDHAT ⛑
 > ### Redhat create the home directory and select bash shell as the default shell by default
-> ### ``useradd username``
+> ### You can directly use: `useradd username`
 
-
+---
 
 # `How to modify users?!`
 - ### `usermod` command and some options
@@ -74,8 +74,8 @@
 	- -l newname oldname 					# edit the user name
 
 - `passwd <user>`		# to add an encrypted password
-- look at to the stupid password 👇
-	- > ![alt text](screens/image-45.png)
+## look at the stupid password 👇
+> ![alt text](screens/image-45.png)
 
 
 # `How to remove a user?!`

@@ -1,4 +1,4 @@
-# Managing and Monitoring Linux Processes [Services and Diamond]
+# Managing Linux Processes:
 
 ##Introduction to Processes
 - A process is an instance of a program in execution. Linux assigns a unique Process ID (PID) to each process, enabling users to manage and monitor them effectively.
