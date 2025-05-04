@@ -1,6 +1,6 @@
 # Managing Linux Processes:
 
-##Introduction to Processes
+## Introduction to Processes
 - A process is an instance of a program in execution. Linux assigns a unique Process ID (PID) to each process, enabling users to manage and monitor them effectively.
 - The first process operate at the linux system is `systemd`. 
 

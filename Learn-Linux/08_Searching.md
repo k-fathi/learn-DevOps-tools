@@ -15,13 +15,14 @@
 ## (3) Searching for file or directory:
 >``locate <file>`` # match faster, search in database, has fewer options 
 - ![alt text](screens/image-22.png)
-- locate == which
 - ![alt text](screens/image-27.png)
 
+### locate = which
+### locate search in the device databases, so any current changes will not be viewed untill system reboot or directely useing `updatedb` command
 
-```markdown
-    dd if=<path1> of=<path2> bs=<n>M conut=<x>
-    # copy from path1 to path2 and make the block size (bs) = n MegaByte and count x from this Block
+```bash
+dd if=<path1> of=<path2> bs=<n>M conut=<x>
+# copy from path1 to path2 and make the block size (bs) = n MegaByte and count x  Blocks
 ```
 
 >``find <path> <criteria>``	# seach in the whole file system, has many options

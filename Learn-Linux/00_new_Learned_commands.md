@@ -61,15 +61,30 @@
 # Most Important Files in Linux
 
 1. **`/etc/passwd`**  
-     User account details.  
+    User account details.  
 2. **`/etc/group`**  
-     Group account details.  
+    Group account details.  
 3. **`/etc/login.defs`**  
-     System variables.  
+    System variables.  
 4. **`/etc/shadow`**  
-     Encrypted passwords.  
+    Encrypted passwords.  
 5. **`/var/log/secure`**  
-     Security logs.  
+    Security logs.  
+
+6. **`/etc/sysconfig/netwrok-scripts`**  
+    system netwrok confgiurations For ReadHat 7, 8.  
+
+7. **`/etc/NetworkManager/system-connections`**  
+    system netwrok confgiurations For ReadHat 9.  
+
+8. **`/etc/ssh/sshd_config`**  
+    contains important onfiurations
+
+9. **`/etc/rsyslog.conf`**  
+    contains the `rsyslog`/`logs` configurations 
+
+10. **`/etc/systemd/journald.conf`**  
+    contains the `systemd-journald`/`logs` configurations
 
 ---
 

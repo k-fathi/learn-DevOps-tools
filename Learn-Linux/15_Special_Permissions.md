@@ -18,7 +18,7 @@ ls -l filename
 
 ## 2. SGID (Set Group ID)
 - For files: Executes with the group permissions of the file.
-- For directories: Files created inside a directory will inherit the group owner of the this directory.
+- For directories: Files created inside a directory will inherit the group owner of this directory.
 
 
 ### Example:
