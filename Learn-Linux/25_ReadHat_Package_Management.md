@@ -3,13 +3,13 @@
 
 ### **RPM Packages**
 
-![alt text](image-125.png)
+![alt text](screens/image-125.png)
 
 #### **Example**:
 ```bash
 ls /run/media/karim/RHEL-8-10-0-BaseOS-x86_64/BaseOS/
 ```
-![alt text](image-126.png)
+![alt text](screens/image-126.png)
 
 #### **RPM Modes (requires dependencies)**:
 1. **Query Mode (-q)**: Ask for uninstalled packages.
@@ -45,13 +45,13 @@ ls /run/media/karim/RHEL-8-10-0-BaseOS-x86_64/BaseOS/
 
 #### **Problems with RPM**:
 - Resolving dependencies manually.
-![alt text](image-127.png)
+![alt text](screens/image-127.png)
 
 ---
 
 ### **YUM** (No dependencies required)
 - Installs packages along with all dependencies.
-![alt text](image-128.png)
+![alt text](screens/image-128.png)
 
 
 #### **Common YUM Commands**

@@ -33,7 +33,7 @@ Determines which logs are stored in which files.
 man logger
 # Displays all facilities and priorities.
 ```
-> ![alt text](image-114.png)
+> ![alt text](screens/image-114.png)
 
 ### Log Rotation
 - When a log file reaches its size limit or expiration time, it is renamed (e.g., `log.textdate`).
@@ -84,7 +84,7 @@ systemd-journald
 
 ### Making Logs Persistent
 Through the Configuration file: `/etc/systemd/journald.conf`.
-> ![alt text](image-115.png)
+> ![alt text](screens/image-115.png)
    - `Storage` options:
       - `none`: Drops all logs.
       - `auto`: Uses `/var/log/journal` if available; otherwise, volatile storage.

@@ -44,11 +44,11 @@
     umount /Directory/
     ```
 - Example:
-> ![Temporary Mounting Example](image-116.png)
+> ![Temporary Mounting Example](screens/image-116.png)
 
 ##  **Note**: The mounting point (directory) acts as a "gate" to the device. Changing the gate to another device will display the contents of the new device.
 
-> ![Persistent Mounting Example](image-117.png)
+> ![Persistent Mounting Example](screens/image-117.png)
 
 
 # The rest of the Mounting  Types & Storage Management will be presented in Linux Admin 2 Course. [Wait for it 😁]

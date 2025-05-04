@@ -46,7 +46,7 @@ apt install <package-name>
       apt upgrade
       ```
 
-![alt text](image-118.png)
+![alt text](screens/image-118.png)
 
 ---
 
@@ -57,27 +57,27 @@ apt install <package-name>
    ```bash
    apt -a
    ```
-   ![alt text](image-120.png)
+   ![alt text](screens/image-120.png)
 
 - List installed packages:
    ```bash
    apt --list
    ```
-   ![alt text](image-121.png)
+   ![alt text](screens/image-121.png)
 
 #### **Search**
 - Search for a package:
    ```bash
    apt search <package>
    ```
-   ![alt text](image-122.png)
+   ![alt text](screens/image-122.png)
 
 #### **Show**
 - Show package details:
    ```bash
    apt show <package>
    ```
-   ![alt text](image-123.png)
+   ![alt text](screens/image-123.png)
 
 #### **Download**
 - Download a package without installation:
@@ -90,7 +90,7 @@ apt install <package-name>
    ```bash
    apt depends <package>
    ```
-   ![alt text](image-124.png)
+   ![alt text](screens/image-124.png)
 
 #### **Remove**
 - Remove a package:
