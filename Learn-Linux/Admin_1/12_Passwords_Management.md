@@ -64,7 +64,7 @@
       - "+1 day" 
          > ![alt text](screens/image-63.png)
       
-      - "-01 day"
+      - "-10 day"
          > ![alt text](screens/image-64.png)
       
       - "+4 month"

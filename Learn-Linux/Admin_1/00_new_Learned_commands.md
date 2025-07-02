@@ -53,6 +53,28 @@
 - **`!<command>`**  
     Repeat last matching command.  
 
+### Translation and Display Commands
+
+- **`tr`**  
+    Translate or delete characters.  
+    ```bash
+    # Example: Convert lowercase to uppercase
+    echo "hello world" | tr 'a-z' 'A-Z'
+    # Output:
+    HELLO WORLD
+    ```
+
+- **`tee`**  
+    Read from standard input and write to standard output and files.  
+    ```bash
+    # Example: Save output to a file while displaying it
+    echo "Hello, Linux!" | tee output.txt
+    # Output:
+    Hello, Linux!
+    # The content "Hello, Linux!" is also saved in output.txt
+    ```
+
+
 ### Writing Command Shortcuts
 ![Command Shortcuts](screens/image-5.png)
 

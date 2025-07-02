@@ -1,1 +1,1 @@
-A reposotory to learn the DevOps tools
+A reposotory to learn the DevOps tools.

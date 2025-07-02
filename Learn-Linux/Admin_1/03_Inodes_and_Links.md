@@ -9,7 +9,7 @@
     - permission
     - owner
     - creation time
-    - size ``and son on`
+    - size `and so on`
 - each Inode number will point to one block
     - > `ls -li` # will print the inode number 
 - in case of larg file 

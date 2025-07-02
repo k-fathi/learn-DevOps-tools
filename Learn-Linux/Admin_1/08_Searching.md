@@ -10,8 +10,16 @@
 ## (2) Searching about text from file: 
 >``grep <pattern> <path>``    # find a specific pattern in a file 
 - ![alt text](screens/image-21.png)
- 
-
+### Options:
+- `-q` (quiet mode, no output, just exit status)
+- `-w` (match whole words exactly)
+- `-i` (case insensitive)
+- `-v` (invert match , show lines that do not match)
+- `-r` (recursive search in directories)
+- `-l` (list only the names of files with matching lines)
+- `-n` (show line numbers)
+- `-c` (count the number of matching lines)
+- `-E` (extended regex)
 ## (3) Searching for file or directory:
 >``locate <file>`` # match faster, search in database, has fewer options 
 - ![alt text](screens/image-22.png)
