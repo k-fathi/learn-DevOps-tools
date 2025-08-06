@@ -55,7 +55,7 @@ apt install <package-name>
 #### **List**
 - List all packages from all repositories (installed or not):
    ```bash
-   apt -a
+   apt list -a
    ```
    ![alt text](screens/image-120.png)
 

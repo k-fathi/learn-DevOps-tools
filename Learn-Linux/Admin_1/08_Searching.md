@@ -11,7 +11,7 @@
 >``grep <pattern> <path>``    # find a specific pattern in a file 
 - ![alt text](screens/image-21.png)
 ### Options:
-- `-q` (quiet mode, no output, just exit status)
+- `-q` (quiet mode, no output, just exit status)/etc/nginx/sites-enabled
 - `-w` (match whole words exactly)
 - `-i` (case insensitive)
 - `-v` (invert match , show lines that do not match)
