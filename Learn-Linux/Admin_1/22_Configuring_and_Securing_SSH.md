@@ -66,10 +66,7 @@ sudo apt install openssh-server
    ```
 
 3. It's important to make the key excutable with minimum required premissions:
-   ```bash  
    
-   ```
-
    - The `~/.ssh` directory should have `700` permissions (read, write, execute for the owner).
    - The private key file (`id_rsa`) should have `600` permissions (read and write for the owner only).
    - The public key file (`id_rsa.pub`) should have `644` permissions (read for everyone, write for the owner).
