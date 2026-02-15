@@ -24,7 +24,12 @@
 ### شجرة العمليات (`pstree`)
 بتوريك مين مشغل مين.
 ```bash
+# شجرة العمليات (Process Tree)
 pstree -p
+
+# شجرة العمليات للشل الحالي (PID $$) مع الآباء
+pstree -ps $$
+# output: systemd(1)───systemd(1839)───terminator(7897)───zsh(7906)───pstree(7954)
 ```
 > ![pstree](screens/image-99.png)
 

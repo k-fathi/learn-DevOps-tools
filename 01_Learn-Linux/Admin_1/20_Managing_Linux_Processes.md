@@ -25,7 +25,12 @@ A process is a running instance of a program. Linux assigns a unique **PID** (Pr
 ### Process Tree (`pstree`)
 Visualizes the parent-child relationship of processes.
 ```bash
+# General tree
 pstree -p
+
+# Show tree for current shell (PID $$) & ancestors
+pstree -ps $$
+# output: systemd(1)───systemd(1839)───terminator(7897)───zsh(7906)───pstree(7954)
 ```
 > ![pstree](screens/image-99.png)
 
