@@ -1,5 +1,9 @@
 # Ignore everything
 *
 
+!.gitignore
 !01_Learn-Linux/
 !01_Learn-Linux/**
+!02_Learn-Bash/
+!02_Learn-Bash/**
+!README.md

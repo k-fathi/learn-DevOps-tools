@@ -6,18 +6,18 @@ Whether you are a beginner starting your journey or an experienced engineer look
 
 ## Repository Structure
 
-The repository currently features the following learning module:
+The repository currently features the following learning modules:
 
 | Module | Directory | Description |
 | :--- | :--- | :--- |
 | **Linux** | [`01_Learn-Linux`](./01_Learn-Linux) | Comprehensive Linux administration guides. Includes **Admin 1** (English/Arabic). |
+| **Bash Scripting** | [`02_Learn-Bash`](./02_Learn-Bash) | Complete Bash shell scripting course from fundamentals to automation. Includes **25 lessons + Cheat Sheet** (English/Arabic). |
 
 ## Upcoming Roadmap
 
 The following courses are currently in development and will be released soon to complete your DevOps journey:
 
 - **Python for DevOps**: Automation, scripting, and tool development.
-- **Bash Scripting**: Advanced shell scripting and automation.
 - **Docker**: Containerization fundamentals to advanced usage.
 - **Kubernetes**: Container orchestration and cluster management.
 - **YAML**: The configuration language for DevOps tools.
