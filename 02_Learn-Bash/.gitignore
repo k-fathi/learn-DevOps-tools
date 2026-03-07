@@ -1,5 +1,6 @@
 # Backup archives & logs
-Backups_project/Backup/
+Backups_project/
+Backups_project/*
 *.tar.gz
 *.tar.bzip
 *.tar.xz
