@@ -2,8 +2,14 @@
 *
 
 !.gitignore
+
+!00_Workspace-Setup/
+!00_Workspace-Setup/**
+
 !01_Learn-Linux/
 !01_Learn-Linux/**
+
 !02_Learn-Bash/
 !02_Learn-Bash/**
+
 !README.md
