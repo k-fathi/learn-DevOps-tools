@@ -10,25 +10,27 @@ The repository currently features the following learning modules:
 
 | Module | Directory | Description |
 | :--- | :--- | :--- |
+| **00_Workspace-Setup** | [`00_Workspace-Setup`](./00_Workspace-Setup) | Instructions for setting up your development environment and tools. |
 | **Linux** | [`01_Learn-Linux`](./01_Learn-Linux) | Comprehensive Linux administration guides. Includes **Admin 1** (English/Arabic). |
 | **Bash Scripting** | [`02_Learn-Bash`](./02_Learn-Bash) | Complete Bash shell scripting course from fundamentals to automation. Includes **25 lessons + Cheat Sheet** (English/Arabic). |
+| **Git** | [`03_Learn-Git`](./03_Learn-Git) | Master Git version control with this comprehensive guide. |
+
 
 ## Upcoming Roadmap
 
 The following courses are currently in development and will be released soon to complete your DevOps journey:
 
-- **Python for DevOps**: Automation, scripting, and tool development.
 - **Docker**: Containerization fundamentals to advanced usage.
-- **Kubernetes**: Container orchestration and cluster management.
-- **YAML**: The configuration language for DevOps tools.
-- **Ansible**: Configuration management and infrastructure automation.
-- **Terraform**: Infrastructure as Code (IaC) provisioning.
-- **CI/CD**: Pipelines with Jenkins, GitHub Actions, and GitLab CI.
 - **Nginx**: Web server configuration and reverse proxying.
-- **Git**: Advanced version control workflows.
+- **YAML**: The configuration language for DevOps tools.
+- **Kubernetes**: Container orchestration and cluster management.
+- **CI/CD**: Pipelines with Jenkins, GitHub Actions, and GitLab CI.
+- **Terraform**: Infrastructure as Code (IaC) provisioning.
+- **Ansible**: Configuration management and infrastructure automation.
+- **Python for DevOps**: Automation, scripting, and tool development.
 - **Monitoring**: Prometheus, Grafana, and ELK Stack.
 
-*> Stay tuned! New content is being added regularly.*
+*Stay tuned! New content is being added regularly.*
 
 
 
@@ -47,8 +49,7 @@ Contributions are welcome!
 
 ## Author
 
-**Karim Fathi**
+**Karim Fathi**:
+[Linkedin](https://www.linkedin.com/in/kareemfathy/), [GitHub](https://github.com/k-fathi)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/kareemfathy/)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/k-fathi)
-
+also see my [DevOps Galaxy](https://devops-galaxy.me) for more docs, tutorials and free courses notifications.

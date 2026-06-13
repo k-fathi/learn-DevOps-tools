@@ -1,6 +1,7 @@
 # Ignore everything
 *
 
+# Expect:
 !.gitignore
 
 !00_Workspace-Setup/
@@ -11,5 +12,10 @@
 
 !02_Learn-Bash/
 !02_Learn-Bash/**
+
+
+!03_Learn-Git/
+!03_Learn-Git/**
+
 
 !README.md
