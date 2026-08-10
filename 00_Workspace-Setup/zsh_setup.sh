@@ -1,16 +1,14 @@
 #!/bin/bash
 
 echo "Checking Package Manager and installing dependencies..."
+
 if command -v apt &> /dev/null; then
     sudo apt update
     sudo apt install zsh curl git sed -y
-
 elif command -v dnf &> /dev/null; then
     sudo dnf install zsh curl git sed util-linux-user --allowerasing -y
-
 elif command -v yum &> /dev/null; then
     sudo yum install zsh curl git sed util-linux-user -y
-
 else
     echo "Error: Unsupported Package Manager!"
     exit 1
@@ -30,11 +28,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo "Configuring ~/.zshrc..."
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
 sed -i 's/^plugins=(git)/plugins=(git docker kubectl helm docker-compose dotenv zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="robbyrussell"/' ~/.zshrc
 
-exec zsh
+echo "====================================================="
+echo "Setup Complete! Starting ZSH..."
+echo "====================================================="
 
-echo "====================================================="
-echo "Setup Complete! ZSH and Oh My Zsh are ready."
-echo "====================================================="
+exec < /dev/tty
+exec zsh -l
