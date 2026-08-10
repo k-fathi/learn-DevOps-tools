@@ -37,5 +37,4 @@ echo "====================================================="
 echo "Setup Complete! Starting ZSH..."
 echo "====================================================="
 
-exec < /dev/tty
-exec zsh -l
+exec zsh -l < /dev/tty
