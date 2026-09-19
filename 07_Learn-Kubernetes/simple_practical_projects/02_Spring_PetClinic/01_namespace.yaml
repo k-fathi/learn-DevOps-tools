@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: petclinic-ns
-  labels:
-    app: petclinic
-    env: dev
