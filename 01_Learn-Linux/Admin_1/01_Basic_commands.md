@@ -4,13 +4,24 @@
 Mastering basic Linux commands is the foundation of system administration. This guide covers essential commands for navigation, file management, system information, and user switching.
 
 ## 2. System Information
+> <!-- ![basic system info commands](screens/simple_sysinfo_cmds.png) -->
+
+```mermaid
+graph LR
+    classDef user fill:#6b21a8,stroke:#d8b4fe,stroke-width:2px,color:#fff;
+    classDef hw fill:#3f3f46,stroke:#a1a1aa,stroke-width:2px,color:#fff;
+
+    User(🧑💻 User):::user -- "free -h" --> RAM(🧠 RAM Usage):::hw
+    User -- "df -h" --> Disk(💾 Disk Space):::hw
+    User -- "uptime" --> CPU(⏱️ System Load):::hw
+```
 
 ### CPU & Memory
 ```bash
 # Display system uptime and load
 uptime
 # Output: 10:00:00 up 1:00, 2 users, load average: 0.00, 0.01, 0.05
-> ![uptime command](screens/image-3.png)
+> <!-- ![uptime command](screens/image-3.png) -->
 
 # Human-readable uptime
 uptime -p
@@ -18,7 +29,7 @@ uptime -p
 
 # CPU architecture details
 lscpu | grep 'Model name\|Socket(s)\|Core(s) per socket\|Thread(s) per core\|CPU MHz\|Architecture'
-> ![lscpu command](screens/image-1.png)
+> <!-- ![lscpu command](screens/image-1.png) -->
 
 # Memory usage
 free -h
@@ -27,7 +38,7 @@ free -h
 # Mem:           7.8G        2.1G        3.2G        150M        2.5G        5.3G
 # Swap:          2.0G        0B          2.0G
 ```
-> ![free command](screens/image-2.png)
+> <!-- ![free command](screens/image-2.png) -->
 
 ### Disk Usage
 ```bash
@@ -36,7 +47,7 @@ df -h
 # Output:
 # Filesystem      Size  Used Avail Use% Mounted on
 # /dev/sda1       100G   30G   70G  30% /
-> ![df command](screens/image-6.png)
+> <!-- ![df command](screens/image-6.png) -->
 
 # Directory size
 du -sh /var/log
@@ -83,6 +94,18 @@ ls -R
 > **Pro Tip:** The `{}` brace expansion in `mkdir` saves you from typing the command three times!
 
 ## 3. Navigation & File Operations
+> <!-- ![basic file operations](screens/simple_fileops_cmds.png) -->
+
+```mermaid
+graph LR
+    classDef user fill:#6b21a8,stroke:#d8b4fe,stroke-width:2px,color:#fff;
+    classDef item fill:#1e3a8a,stroke:#60a5fa,stroke-width:2px,color:#fff;
+    classDef danger fill:#991b1b,stroke:#f87171,stroke-width:2px,color:#fff;
+
+    User(🧑💻 User):::user -- "mkdir dir" --> Dir(📁 New Directory):::item
+    User -- "cp file bk.txt" --> Copy(📑 Copied File):::item
+    User -- "rm file" --> Trash(🗑️ Deleted File):::danger
+```
 
 ### Basic Navigation
 ```bash
@@ -125,7 +148,7 @@ rm -r directory/                # Recursive removal
 rm -i file.txt                  # Interactive (confirm)
 ```
 
-> ![Interactive delete confirmation](screens/image-4.png)
+> <!-- ![Interactive delete confirmation](screens/image-4.png) -->
 
 ### Advanced File Operations
 ```bash
@@ -240,6 +263,7 @@ echo "Hello, Linux!" | tee output.txt
 For advanced text processing, see [30_Text_Processing_Tools.md](./30_Text_Processing_Tools.md).
 
 ## 8. Command Shortcuts
+> <!-- ![command shortcuts](screens/simple_shortcuts.png) -->
 
 | Shortcut | Action |
 | :--- | :--- |
@@ -249,7 +273,7 @@ For advanced text processing, see [30_Text_Processing_Tools.md](./30_Text_Proces
 | `Ctrl + D` | Exit current shell/session |
 | `Ctrl + R` | Search command history |
 
-> ![Command shortcuts example](screens/image-5.png)
+> <!-- ![Command shortcuts example](screens/image-5.png) -->
 
 ## 9. Important System Files
 

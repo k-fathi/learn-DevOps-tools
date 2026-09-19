@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-svc
+  namespace: petclinic-namespace
+  labels:
+    tier: db
+spec:
+  type: ClusterIP
+  selector:
+    tier: db
+  ports:
+  - port: 3306
+    targetPort: 3306 # if not specified it will be the same as the service port [port = 3306]
+  

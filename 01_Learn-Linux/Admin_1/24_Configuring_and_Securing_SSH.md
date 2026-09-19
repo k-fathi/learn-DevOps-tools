@@ -10,17 +10,20 @@
 ssh user@hostname_or_ip
 ```
 *Port defaults to 22.*
-> ![connecting to host](screens/image-130.png)
-> ![ssh fingerprint](screens/image-132.png)
+> <!-- ![connecting to host](screens/image-130.png) -->
+> <!-- ![ssh fingerprint](screens/image-132.png) -->
+> ![ssh basic connection](screens/simple_ssh_connect.png)
 
 ## 2. SSH Authentication Methods
 
 ### Authentication Flow
-> ![SSH Connection & Authentication Flow](screens/infographic_ssh_flow.png)
+> <!-- ![SSH Connection & Authentication Flow](screens/infographic_ssh_flow.png) -->
+> ![ssh authentication concepts](screens/simple_ssh_auth.png)
+> ![ssh keygen commands syntax](screens/simple_ssh_keygen.png)
 
 ### A. Password Authentication
 Simple but vulnerable to Brute Force attacks. Enabled by default.
-> ![password settings](screens/image-129.png)
+> <!-- ![password settings](screens/image-129.png) -->
 
 ### B. Key-Based Authentication (Recommended)
 More secure. Uses a Public/Private key pair.
@@ -31,7 +34,7 @@ More secure. Uses a Public/Private key pair.
     ssh-keygen -t rsa -b 4096
     ```
     *Creates `~/.ssh/id_rsa` (Private) and `~/.ssh/id_rsa.pub` (Public).*
-    > ![ssh-keygen](screens/image-134.png)
+    > <!-- ![ssh-keygen](screens/image-134.png) -->
 
 2.  **Copy Public Key to Server:**
     ```bash
@@ -49,11 +52,11 @@ More secure. Uses a Public/Private key pair.
     ```bash
     ssh user@ip
     ```
-    > ![ssh connection](screens/image-136.png)
+    > <!-- ![ssh connection](screens/image-136.png) -->
 
 ### Viewing Keys
 Keys are stored in `~/.ssh/`.
-> ![ssh directory](screens/image-135.png)
+> <!-- ![ssh directory](screens/image-135.png) -->
 
 ## 4. Securing SSH
 Edit `/etc/ssh/sshd_config` to harden security.
@@ -72,7 +75,7 @@ Run commands without logging in:
 ```bash
 ssh user@host command
 ```
-> ![remote command](screens/image-137.png)
+> <!-- ![remote command](screens/image-137.png) -->
 
 ## 6. Real-World Scenarios
 

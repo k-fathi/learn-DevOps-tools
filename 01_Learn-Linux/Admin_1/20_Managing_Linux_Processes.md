@@ -4,7 +4,8 @@
 A process is a running instance of a program. Linux assigns a unique **PID** (Process ID) to every process. The mother of all processes is `systemd` (PID 1).
 
 ### Process Lifecycle
-> ![Linux Process States](screens/infographic_process_states.png)
+> <!-- ![Linux Process States](screens/infographic_process_states.png) -->
+> ![process states concept](screens/simple_process_states.png)
 
 ## 2. Viewing Processes (`ps`)
 
@@ -13,8 +14,9 @@ A process is a running instance of a program. Linux assigns a unique **PID** (Pr
 -   `ps aux`: View **all** running processes on the system (BSD style).
 -   `ps -ef`: View **all** running processes (Standard syntax).
 
-> ![ps command](screens/image-97.png)
-> ![ps aux](screens/image-98.png)
+> <!-- ![ps command](screens/image-97.png) -->
+> <!-- ![ps aux](screens/image-98.png) -->
+> ![ps aux output anatomy](screens/simple_ps_anatomy.png)
 
 **Common Columns:**
 -   **PID:** Process ID.
@@ -32,7 +34,7 @@ pstree -p
 pstree -ps $$
 # output: systemd(1)───systemd(1839)───terminator(7897)───zsh(7906)───pstree(7954)
 ```
-> ![pstree](screens/image-99.png)
+> <!-- ![pstree](screens/image-99.png) -->
 
 ## 3. Searching Processes (`pgrep`)
 Find PIDs by name.
@@ -83,7 +85,8 @@ killall apache2
 -   **`bg`**: Resume paused job in background.
 -   **`fg`**: Bring background job to foreground.
 -   **`jobs`**: List active jobs in current shell.
-> ![background jobs](screens/image-100.png)
+> <!-- ![background jobs](screens/image-100.png) -->
+> ![process management commands](screens/simple_manage_procs.png)
 
 ## 6. 🏆 Master Example: Debugging High CPU
 **Scenario:** The system is slow. You need to identify the rogue process consuming the most CPU, verify what it is, and terminate it.

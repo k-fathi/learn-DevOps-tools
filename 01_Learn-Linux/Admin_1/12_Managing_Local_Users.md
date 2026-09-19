@@ -4,7 +4,8 @@
 Linux is a multi-user operating system. This means multiple users can access the system simultaneously. Managing users and their permissions is a core responsibility of a Linux administrator.
 
 ### User Types & Structure
-> ![Linux User Types & Accounts](screens/infographic_users_types.png)
+> <!-- ![Linux User Types & Accounts](screens/infographic_users_types.png) -->
+> ![user types summary](screens/simple_user_types.png)
 
 ## 2. User Accounts in LinuxIDs (UID)
 1.  **Root (Superuser):** UID `0`.
@@ -13,18 +14,19 @@ Linux is a multi-user operating system. This means multiple users can access the
 
 ## 3. Critical Files
 -   `/etc/passwd`: User account information.
-    > ![passwd file content](screens/image-48.png)
+    > <!-- ![passwd file content](screens/image-48.png) -->
 -   `/etc/shadow`: Encrypted password data.
 -   `/etc/group`: Group information.
 
 **Structure of `/etc/passwd`:**
-> ![passwd file structure](screens/image-43.png)
+> <!-- ![passwd file structure](screens/image-43.png) -->
+> ![/etc/passwd structure](screens/simple_etc_passwd.png)
 
 **Check User Info:**
 ```bash
 id <username>
 ```
-> ![id command output](screens/image-29.png)
+> <!-- ![id command output](screens/image-29.png) -->
 
 ## 4. Creating Users (`useradd`)
 **Syntax:**
@@ -42,15 +44,16 @@ useradd [options] username
 ```bash
 sudo useradd -m -s /bin/bash -c "DevOps Engineer" -G sudo karim
 ```
-> ![useradd example](screens/image-40.png)
+> <!-- ![useradd example](screens/image-40.png) -->
+> ![user commands syntax](screens/simple_user_cmds.png)
 
 > [!WARNING]
 > Do NOT use plaintext passwords with `-p`.
-> ![plaintext password visibility](screens/image-41.png)
+> <!-- ![plaintext password visibility](screens/image-41.png) -->
 
 > [!TIP]
 > Use `adduser` (if available) for an interactive, user-friendly creation process.
-> ![adduser interactive](screens/image-42.png)
+> <!-- ![adduser interactive](screens/image-42.png) -->
 
 ## 5. Modifying Users (`usermod`)
 **Syntax:**
@@ -58,9 +61,9 @@ sudo useradd -m -s /bin/bash -c "DevOps Engineer" -G sudo karim
 usermod [options] username
 ```
 -   `-aG`: Append to group (Essential to use `-a` to avoid removing other groups).
-    > ![usermod append group](screens/image-47.png)
+    > <!-- ![usermod append group](screens/image-47.png) -->
 -   `-G`: Set secondary groups (overwrites existing ones).
-    > ![usermod set group](screens/image-46.png)
+    > <!-- ![usermod set group](screens/image-46.png) -->
 -   `-L`: Lock account.
 -   `-U`: Unlock account.
 -   `-l`: Rename user.
@@ -75,7 +78,7 @@ sudo usermod -aG docker karim
 ```bash
 sudo passwd karim
 ```
-> ![passwd command](screens/image-45.png)
+> <!-- ![passwd command](screens/image-45.png) -->
 
 ## 6. Deleting Users (`userdel`)
 **Syntax:**

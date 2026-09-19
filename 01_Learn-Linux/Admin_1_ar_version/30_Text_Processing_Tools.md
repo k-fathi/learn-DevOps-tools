@@ -2,7 +2,8 @@
 
 ## 1. مقدمة
 لينكس "ملك" التعامل مع النصوص. أدوات زي `cut` و `tr` و `tee` بتخليك تشكل الداتا زي العجينة من التيرمنال.
-> ![Linux Pipes & Redirection](screens/infographic_pipes.png)
+> <!-- ![Linux Pipes & Redirection](screens/infographic_pipes.png) -->
+> ![text tools summary](screens/simple_text_tools_summary.png)
 
 ## 2. القص واللزق (`cut`)
 بيقصقص الأعمدة من الملفات.

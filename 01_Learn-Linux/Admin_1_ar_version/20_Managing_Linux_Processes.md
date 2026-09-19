@@ -4,7 +4,8 @@
 البروسيس (Process) هي أي برنامج شغال. لينكس بيدي رقم لكل عملية اسمه **PID**. "أم العمليات" كلها هي `systemd` ورقمها 1.
 
 ### دورة حياة العملية (Process Lifecycle)
-> ![Linux Process States](screens/infographic_process_states.png)
+> <!-- ![Linux Process States](screens/infographic_process_states.png) -->
+> ![process states concept](screens/simple_process_states.png)
 
 ## 2. عرض العمليات (`ps`)
 
@@ -12,8 +13,9 @@
 - `ps`: بيعرض البرامج اللي شغالة في الشاشة دي بس.
 - `ps aux`: بيعرض **كل** حاجة شغالة في السيستم (ده اللي بنستخدمه دايماً).
 
-> ![ps command](screens/image-97.png)
-> ![ps aux](screens/image-98.png)
+> <!-- ![ps command](screens/image-97.png) -->
+> <!-- ![ps aux](screens/image-98.png) -->
+> ![ps aux output anatomy](screens/simple_ps_anatomy.png)
 
 **أهم العواميد:**
 - **PID:** رقم العملية.
@@ -31,7 +33,7 @@ pstree -p
 pstree -ps $$
 # output: systemd(1)───systemd(1839)───terminator(7897)───zsh(7906)───pstree(7954)
 ```
-> ![pstree](screens/image-99.png)
+> <!-- ![pstree](screens/image-99.png) -->
 
 ## 3. البحث عن عملية (`pgrep`)
 هات رقم العملية (PID) بالاسم.
@@ -74,7 +76,8 @@ killall apache2
 - **`bg`**: كمل البرنامج الموقوف بس في الخلفية.
 - **`fg`**: هات البرنامج من الخلفية وحطه قدامي تاني.
 - **`jobs`**: وريني إيه اللي شغال في الخلفية عندي.
-> ![background jobs](screens/image-100.png)
+> <!-- ![background jobs](screens/image-100.png) -->
+> ![process management commands](screens/simple_manage_procs.png)
 
 ---
 

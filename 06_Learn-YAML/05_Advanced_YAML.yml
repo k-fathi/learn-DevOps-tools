@@ -1,0 +1,31 @@
+full_name: > 
+  namename
+  namename
+  name
+
+last_name: |
+  namename
+  namename
+  name
+
+? - Firstplace 
+  - secondplace
+: ["Karim", "Ahmed"]
+
+
+day: &day_anchor this is a day, will be reapeated
+used_again: *day_anchor
+
+
+person: &person_anchor
+  name: Karim
+  age: 20
+  hobbies:
+    - football
+    - swimming
+    - reading
+
+person2:
+  <<: *person_anchor
+  name: Ahmed
+  

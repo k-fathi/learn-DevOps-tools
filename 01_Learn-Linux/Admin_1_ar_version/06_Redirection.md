@@ -10,7 +10,9 @@
 - **2**: مخرج الأخطاء (`stderr`) - الشاشة (رسائل الخطأ).
 
 ### صورة توضيحية
-> ![I/O Redirection Overview](screens/infographic_redirection.png)
+> <!-- ![I/O Redirection Overview](screens/infographic_redirection.png) -->
+> ![file descriptors concepts](screens/simple_file_descriptors.png)
+> ![redirection operators](screens/simple_redirection_ops.png)
 
 ## 3. علامات التوجيه (Redirection Operators)
 

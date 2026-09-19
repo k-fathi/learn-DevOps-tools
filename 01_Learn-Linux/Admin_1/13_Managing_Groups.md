@@ -4,15 +4,18 @@
 Groups allow you to manage permissions for multiple users at once. Instead of assigning permissions to each user individually, you add users to a group and assign permissions to that group.
 
 ### Groups Management Layout
-> ![Linux Groups Management](screens/infographic_groups.png)
+> <!-- ![Linux Groups Management](screens/infographic_groups.png) -->
+> ![groups types summary](screens/simple_groups_types.png)
 
 Users are assigned a **Primary Group** (usually same as username) and can belong to multiple **Secondary Groups**.
 
 > **File:** `/etc/group` stores group definitions.
-> ![cat /etc/group](screens/image-32.png)
+> <!-- ![cat /etc/group](screens/image-32.png) -->
 
 **File Structure:**
-> ![group file structure](screens/image-33.png)
+> <!-- ![group file structure](screens/image-33.png) -->
+> ![/etc/group file structure](screens/simple_etc_group.png)
+> ![group commands syntax](screens/simple_group_cmds.png)
 
 ## 2. Creating & Deleting Groups
 
@@ -21,13 +24,13 @@ Users are assigned a **Primary Group** (usually same as username) and can belong
 sudo groupadd devs
 ```
 *-g: Specify GID manually.*
-> ![GID assignment](screens/image-49.png)
+> <!-- ![GID assignment](screens/image-49.png) -->
 
 ### Delete a Group
 ```bash
 sudo groupdel devs
 ```
-> ![groupdel example](screens/image-52.png)
+> <!-- ![groupdel example](screens/image-52.png) -->
 
 ## 3. Modifying Groups
 
@@ -35,7 +38,7 @@ sudo groupdel devs
 ```bash
 sudo groupmod -n new_name old_name
 ```
-> ![groupmod example](screens/image-53.png)
+> <!-- ![groupmod example](screens/image-53.png) -->
 
 ## 4. Managing Group Members
 
@@ -43,21 +46,21 @@ sudo groupmod -n new_name old_name
 ```bash
 groups karim
 ```
-> ![groups command](screens/image-54.png)
+> <!-- ![groups command](screens/image-54.png) -->
 
 ### Add User to Group
 Use `usermod` to append (`-a`) a secondary group (`-G`).
 ```bash
 sudo usermod -aG devs karim
 ```
-> ![add user to group](screens/image-50.png)
+> <!-- ![add user to group](screens/image-50.png) -->
 
 ### Remove User from Group
 Use `gpasswd` or `deluser` (Debian).
 ```bash
 sudo gpasswd -d karim devs
 ```
-> ![gpasswd remove](screens/image-51.png)
+> <!-- ![gpasswd remove](screens/image-51.png) -->
 
 ### Change Primary Group
 ```bash

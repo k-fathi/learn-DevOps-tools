@@ -1,11 +1,11 @@
 # 00: Terminals and Shells in Linux
 
-## 1. The Big Picture: Terminal vs Shell vs Kernel
+## 1. The Big Picture: `Terminal` vs `Shell` vs `Kernel`
 Understanding how Linux works requires distinguishing between three key components. Think of it like a restaurant:
 
-> ![Terminal vs Shell vs Kernel Infographic](screens/infographic_terminal_shell_kernel.png)
+> <!-- ![Terminal vs Shell vs Kernel Infographic](screens/infographic_terminal_shell_kernel.png) -->
 
-### The Restaurant Analogy 🍽️
+### The Restaurant Analogy
 1.  **The User (Customer):** That's you! You want something done (e.g., "List my files").
 2.  **The Terminal (Menu/Table):** The interface where you sit and make your request. It listens to your keystrokes and displays the result.
     *   *Examples:* GNOME Terminal, PuTTY, iTerm2.
@@ -81,7 +81,7 @@ ps -aux --forest | grep pts
 
 ---
 
-## 7. 🏆 Master Example: Customizing Your Shell Environment
+## 7. Master Example: Customizing Your Shell Environment
 **Scenario:** You want your terminal to be more useful. You need to:
 1.  Create a permanent alias for updating the system.
 2.  Add a directory to your `PATH` so you can run your scripts from anywhere.

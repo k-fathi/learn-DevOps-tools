@@ -1,0 +1,47 @@
+apiVersion: storage.k8s.io/v1 
+kind: StorageClass
+metadata:
+  name: sc-1
+provisioner: k8s.io/minikube-hostpath
+reclaimPolicy: Retain
+volumeBindingMode: Immediate # WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-1
+spec:
+  storageClassName: sc-1
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+spec:
+  initContainers:
+  - name: init-1
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sh", "-c"]
+    args: ["echo 'Hello From StorageClass Lab ^@^' > /var/www/html/index.html"]
+    volumeMounts:
+    - name: vol-1
+      mountPath: /var/www/html/
+    
+  containers:
+  - name: cont-1
+    image: nginx
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: vol-1
+      mountPath: /usr/share/nginx/html/
+
+  volumes:
+  - name: vol-1
+    persistentVolumeClaim:
+      claimName: pvc-1

@@ -73,6 +73,10 @@ echo "First: $first, Last: $last"
 ```
 
 ### Reading into an Array
+
+* `-a` (array) allows you to read multiple values into an array variable without needing to specify each one individually.
+* it evaluates the input and splits it into words based on whitespace.
+
 ```bash
 read -p "Enter 3 colors: " -a colors
 echo "You entered: ${colors[0]}, ${colors[1]}, ${colors[2]}"

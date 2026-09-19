@@ -4,15 +4,17 @@
 صلاحيات الملفات هي اللي بتحدد مين يقدر يقرأ، يكتب، أو يشغل الملفات. دي أهم حاجة في أمان السيستم.
 
 ## 2. أنواع الصلاحيات (Permission Types)
-> ![Permissions Overview](screens/infographic_permissions.png)
+> <!-- ![Permissions Overview](screens/infographic_permissions.png) -->
+> ![permissions concept](screens/simple_permissions_concept.png)
 
 كل ملف ليه 3 مستويات من الصلاحيات:
 1.  **User (u):** المالك الأصلي للملف (Owner).
 2.  **Group (g):** المجموعة اللي بتملك الملف.
 3.  **Others (o):** أي حد تاني في السيستم.
-> ![file owners](screens/image-70.png)
+> <!-- ![file owners](screens/image-70.png) -->
 
-> ![file types](screens/image-71.png)
+> <!-- ![file types](screens/image-71.png) -->
+> ![file types summary](screens/simple_file_types.png)
 
 ## 3. معاني الصلاحيات
 
@@ -23,7 +25,8 @@
 | **Execute** | `x` | 1 | تشغله كبرنامج | تدخل جوه الفولدر (`cd`) |
 
 **Reading Permissions (`ls -l`):**
-> ![ls -l output](screens/image-75.png)
+> <!-- ![ls -l output](screens/image-75.png) -->
+> ![ls -l anatomy](screens/simple_ls_anatomy.png)
 
 ## 4. تغيير الصلاحيات (`chmod`)
 
@@ -36,7 +39,8 @@ chmod g-w file.txt       # شيل الكتابة من الجروب
 chmod o=r public.doc     # خلي الناس التانية تقرأ بس
 chmod +r file            # خلي كله يقرأ
 ```
-> ![chmod symbolic](screens/image-76.png)
+> <!-- ![chmod symbolic](screens/image-76.png) -->
+> ![chmod command syntax](screens/simple_chmod_syntax.png)
 
 ### طريقة الأرقام (Octal)
 اجمع أرقام الصلاحيات (4, 2, 1).
@@ -47,28 +51,28 @@ chmod 755 script.sh
 # Group: 5 (4+0+1) = r-x (قراءة وتشغيل)
 # Others: 5 (4+0+1) = r-x (قراءة وتشغيل)
 ```
-> ![chmod octal](screens/image-77.png)
+> <!-- ![chmod octal](screens/image-77.png) -->
 
 ## 5. تأثير الصلاحيات
 - **على الملفات:** لو مفيش `Write`، مش هتعرف تحفظ التعديلات.
 - **على الفولدرات:** لو مفيش `Write`، مش هتعرف تعمل ملفات جديدة جواه. لو مفيش `Execute`، مش هتعرف تدخله أصلاً بـ `cd`.
-> ![write perm fail](screens/image-78.png)
-> ![dir write fail](screens/image-81.png)
+> <!-- ![write perm fail](screens/image-78.png) -->
+> <!-- ![dir write fail](screens/image-81.png) -->
 
 ## 6. التغيير المتكرر (Recursive)
 استخدم `-R` عشان تطبق الصلاحية على الفولدر وكل اللي جواه.
 ```bash
 chmod -R 755 /var/www/html
 ```
-> ![recursive changes](screens/image-83.png)
-> ![recursive verify](screens/image-84.png)
+> <!-- ![recursive changes](screens/image-83.png) -->
+> <!-- ![recursive verify](screens/image-84.png) -->
 
 ## 7. الصلاحيات الافتراضية (`umask`)
 الـ `umask` بيحدد الصلاحيات اللي الملف بياخدها أول ما يتخلق.
 - القاعدة: `الأصل - الـ Umask = النتيجة`.
 - الأصل للملفات: `666`.
 - الأصل للفولدرات: `777`.
-> ![default permissions](screens/image-82.png)
+> <!-- ![default permissions](screens/image-82.png) -->
 
 ---
 

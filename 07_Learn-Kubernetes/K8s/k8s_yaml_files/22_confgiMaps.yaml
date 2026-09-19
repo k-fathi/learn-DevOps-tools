@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html index.htm;
+            try_files $uri $uri/ /index.html;  
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+            root /usr/share/nginx/html;
+        }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf # just the file, not the whole directory
+
+      volumes:
+      - name: config-volume
+        configMap:      # here we use types like emptyDir, hostPath, configMap, secret, etc.
+          name: nginx-config
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+data:
+  # key-value pairs
+  APP_NAME: "MyApp"
+  APP_ENV: "production"
+  APP_DEBUG: "false" 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-with-cm
+  labels:
+    env: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+        - name: app-containers
+          image: nginx:kube
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: app-configmap
+---
+

@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+            - name: hpa-deploy-cont
+              image: nginx
+              imagePullPolicy: IfNotPresent
+              ports:
+              - containerPort: 80   
+              resources:
+                  limits:
+                      cpu: "200m"
+                      memory: "250Mi"
+                  requests:
+                      cpu: "150m"
+                      memory: "100Mi"
+---
+# HPA
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+    name: hpa-1
+spec:
+    maxReplicas: 5
+    minReplicas: 2
+    scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: nginx-deployment
+    metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 70
+...

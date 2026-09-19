@@ -1,0 +1,43 @@
+---
+# Required DuringSchedulingIgnoredDurindExecution
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod-1
+spec:
+    contaienrs:
+    - name: nginx-cont
+      image: nginx
+    
+    affinity:
+        nodeAffinity:
+            requiredDuringSchedulingIGnordDuringExecution:
+                nodeSelectorTerm:
+                    - machExpressions:
+                      - key: node01 # must mach the node label key
+                        operator: In # can be: In, NotIn, Exists
+                        values:
+                        - first-node # must mach the node label value
+
+---
+# preffered DuringSchedulingIGnordDuringExecution:
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod-1
+spec:
+    contaienrs:
+    - name: nginx-cont
+      image: nginx
+    
+    affinity:
+        nodeAffinity:
+            prefferedDuringSchedulingIGnordDuringExecution:
+                - weight: 1 # node score 1:100
+                  preference: 
+                    machExpressions:
+                        - key: node02 # must mach the node label key
+                          operator: In # can be: In, NotIn, Exists
+                          values:
+                          - second-node # must mach the node label value
+...

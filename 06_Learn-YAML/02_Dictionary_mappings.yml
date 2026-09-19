@@ -1,0 +1,10 @@
+---
+# Dictionary of two items/keys 
+persons:
+  name: karim
+  age: 25
+  grade: A
+shcool: BSU
+...
+
+info: {name: karim, age: 25, grade: A, school: BSU}

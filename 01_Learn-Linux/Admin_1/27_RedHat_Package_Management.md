@@ -4,19 +4,20 @@
 RedHat-based systems (RHEL, CentOS, Fedora) use **DNF** (Dandified YUM) and **RPM**. `dnf` is the modern replacement for `yum`.
 
 ### Package Management Cycle
-> ![RedHat Package Management Lifecycle](screens/infographic_redhat_packages.png)
+> <!-- ![RedHat Package Management Lifecycle](screens/infographic_redhat_packages.png) -->
+> ![redhat package lifecycle](screens/simple_redhat_lifecycle.png)
 
 ## 2. DNF vs RPMia `rpm`, `yum` (older), or `dnf` (modern).
 
 ## 2. Low-Level Management (`rpm`)
 Directly manages `.rpm` files. Does **not** resolve dependencies.
-> ![rpm image](screens/image-125.png)
+> <!-- ![rpm image](screens/image-125.png) -->
 
 **Searching RPMs:**
-> ![rpm search](screens/image-126.png)
+> <!-- ![rpm search](screens/image-126.png) -->
 
 **Dependencies Warning:**
-> ![rpm dependencies](screens/image-127.png)
+> <!-- ![rpm dependencies](screens/image-127.png) -->
 
 | Action | Command |
 | :--- | :--- |
@@ -26,9 +27,11 @@ Directly manages `.rpm` files. Does **not** resolve dependencies.
 | **Query Installed** | `rpm -q package_name` |
 | **List All** | `rpm -qa` |
 
+> ![rpm commands syntax](screens/simple_rpm_cmds.png)
+
 ## 3. High-Level Management (`yum` / `dnf`)
 Retrieves packages from repositories and resolves dependencies. `dnf` is the successor to `yum`.
-> ![yum install](screens/image-128.png)
+> <!-- ![yum install](screens/image-128.png) -->
 
 | Action | Command |
 | :--- | :--- |
@@ -37,6 +40,8 @@ Retrieves packages from repositories and resolves dependencies. `dnf` is the suc
 | **Update** | `sudo dnf update` |
 | **Search** | `dnf search keyword` |
 | **Info** | `dnf info package_name` |
+
+> ![dnf commands syntax](screens/simple_dnf_cmds.png)
 
 ### Repositories
 -   **Location:** `/etc/yum.repos.d/*.repo`

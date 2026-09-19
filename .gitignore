@@ -17,5 +17,25 @@
 !03_Learn-Git/
 !03_Learn-Git/**
 
+!04_Learn-Docker/
+!04_Learn-Docker/**
+
+!05_Learn-Nginx/
+!05_Learn-Nginx/**
+
+**/node_modules/
+node_modules/
+*.node
+
+
+!06_Learn-YAML/
+!06_Learn-YAML/**
+
+!07_Learn-Kubernetes/
+!07_Learn-Kubernetes/**
+
+**/QA.md
+QA.md
 
 !README.md
+

@@ -10,7 +10,9 @@ Linux assigns a number to each data stream:
 -   **2**: Standard Error (`stderr`) - Error messages.
 
 ### Visual Guide
-> ![I/O Redirection Overview](screens/infographic_redirection.png)
+> <!-- ![I/O Redirection Overview](screens/infographic_redirection.png) -->
+> ![file descriptors concepts](screens/simple_file_descriptors.png)
+> ![redirection operators](screens/simple_redirection_ops.png)
 
 ## 3. Redirection Operators
 

@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-storage
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  hostPath: 
+    path: "/data/pv-storage"
+  accessModes:
+    - ReadWriteOnce
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-storage
+spec: 
+  storageClassName: manual
+  volumeName: pv-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: storage-pod
+spec:
+  initContainers:
+  - name: create-html
+    image: busybox
+    command: ['sh', '-c', 'echo "<h1>Created Automatically via YAML!</h1>" > /work-dir/index.html']
+    volumeMounts:
+    - name: storage-volume
+      mountPath: /work-dir
+  containers: 
+    - name: storage-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: storage-volume
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: storage-volume
+      persistentVolumeClaim:
+        claimName: pvc-storage

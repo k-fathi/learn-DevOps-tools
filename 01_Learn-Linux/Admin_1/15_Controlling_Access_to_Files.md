@@ -4,16 +4,18 @@
 Linux file permissions control who can read, write, and execute files. They are essential for system security.
 
 ## 2. Permission Types
-> ![Permissions Overview](screens/infographic_permissions.png)
+> <!-- ![Permissions Overview](screens/infographic_permissions.png) -->
+> ![permissions concept](screens/simple_permissions_concept.png)
 
 Every file has three permission scopes:
 1.  **User (u):** The owner of the file.
 2.  **Group (g):** The group assigned to the file.
 3.  **Others (o):** Everyone else.
-> ![file owners](screens/image-70.png)
+> <!-- ![file owners](screens/image-70.png) -->
 
 **File Types:**
-> ![file types](screens/image-71.png)
+> <!-- ![file types](screens/image-71.png) -->
+> ![file types summary](screens/simple_file_types.png)
 
 ## 3. Permission Types
 | Type | Symbol | Octal | File Effect | Directory Effect |
@@ -23,7 +25,8 @@ Every file has three permission scopes:
 | **Execute** | `x` | 1 | Run as script/program | Enter directory (`cd`) |
 
 **Reading Permissions (`ls -l`):**
-> ![ls -l output](screens/image-75.png)
+> <!-- ![ls -l output](screens/image-75.png) -->
+> ![ls -l anatomy](screens/simple_ls_anatomy.png)
 
 ## 4. Changing Permissions (`chmod`)
 
@@ -35,7 +38,8 @@ chmod g-w file.txt       # Remove write from group
 chmod o=r public.doc     # Set others to read-only
 chmod +r file            # Add read to everyone
 ```
-> ![chmod symbolic](screens/image-76.png)
+> <!-- ![chmod symbolic](screens/image-76.png) -->
+> ![chmod command syntax](screens/simple_chmod_syntax.png)
 
 ### Octal Method
 Uses numbers (Sum of 4, 2, 1).
@@ -45,18 +49,18 @@ chmod 755 script.sh
 # Group: 5 (4+0+1) = r-x
 # Others: 5 (4+0+1) = r-x
 ```
-> ![chmod octal](screens/image-77.png)
+> <!-- ![chmod octal](screens/image-77.png) -->
 
 ## 5. Effects of Permissions
 **On Files:**
 -   Without Write permission, editors saving changes will fail.
-    > ![write perm fail](screens/image-78.png)
-    > ![write perm fail 2](screens/image-79.png)
-    > ![write perm fail 3](screens/image-80.png)
+    > <!-- ![write perm fail](screens/image-78.png) -->
+    > <!-- ![write perm fail 2](screens/image-79.png) -->
+    > <!-- ![write perm fail 3](screens/image-80.png) -->
 
 **On Directories:**
 -   Without Write permission, I cannot create files inside.
-    > ![dir write fail](screens/image-81.png)
+    > <!-- ![dir write fail](screens/image-81.png) -->
 ---
 
 ## 7. 🏆 Master Example: Setting Up a Secure Team Directory
@@ -96,14 +100,14 @@ Use `-R` to apply permissions to a directory and all valid contents.
 ```bash
 chmod -R 755 /var/www/html
 ```
-> ![recursive changes](screens/image-83.png)
-> ![recursive verify](screens/image-84.png)
+> <!-- ![recursive changes](screens/image-83.png) -->
+> <!-- ![recursive verify](screens/image-84.png) -->
 
 ## 7. Default Permissions (`umask`)
 The `umask` determines default permissions for new files.
 -   **Logic:** `Default - Umask = Final Permission`.
 -   **Base:** Files (666), Directories (777).
-> ![default permissions](screens/image-82.png)
+> <!-- ![default permissions](screens/image-82.png) -->
 
 ## 8. Real-World Scenarios
 

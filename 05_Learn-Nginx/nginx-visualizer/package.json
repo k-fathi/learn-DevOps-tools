@@ -1,0 +1,32 @@
+{
+    "name": "nginx-visualizer",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "typecheck": "tsc --noEmit",
+        "lint": "echo 'no linter configured'",
+        "test": "echo 'no tests yet'"
+    },
+    "dependencies": {
+        "@monaco-editor/react": "^4.7.0",
+        "@xyflow/react": "^12.0.0",
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.0.0",
+        "lucide-react": "^1.23.0",
+        "next": "^14.0.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-resizable-panels": "^4.12.0",
+        "tailwind-merge": "^3.6.0",
+        "tailwindcss": "^4.3.2",
+        "zustand": "^4.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "26.1.0",
+        "@types/react": "19.2.17",
+        "typescript": "^5.0.0"
+    }
+}

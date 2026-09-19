@@ -4,7 +4,9 @@
 الشبكات هي عصب أي سيرفر. لينكس مليان أدوات عشان تظبط الـ IP، وتراقب الاتصالات، وتحل مشاكل النت.
 
 ### دليل إعداد الشبكات (Network Configuration Guide)
-> ![Network Configuration in Linux](screens/infographic_networking.png)
+> <!-- ![Network Configuration in Linux](screens/infographic_networking.png) -->
+> ![network interfaces concept](screens/simple_network_interfaces.png)
+> ![network commands syntax](screens/simple_network_cmds.png)
 
 ## 2. أسماء كروت الشبكة
 زمان كان اسمها `eth0`، دلوقتي الأسماء بقت غريبة شوية زي `enp3s0` أو `wlp2s0`.

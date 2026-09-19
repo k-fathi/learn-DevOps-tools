@@ -2,7 +2,8 @@
 
 ## 1. Introduction
 Linux stores password hashes in `/etc/shadow` and provides tools to enforce password policies, such as expiration and complexity.
-> ![password aging timeline](screens/image-69-2.png)
+> <!-- ![password aging timeline](screens/image-69-2.png) -->
+> ![/etc/shadow structure](screens/simple_etc_shadow.png)
 
 ## 2. The `/etc/shadow` File
 Stores encrypted passwords and aging information. Readable only by root.
@@ -73,7 +74,8 @@ sudo usermod -U karim
 
 ## 5. Timeline Diagram
 Visualizing password aging policy (`chage -d 2026-1-1 -m 2 -M 10 -W 3 -I 2 user`).
-> ![password aging timeline](screens/image-69-2.png)
+> <!-- ![password aging timeline](screens/image-69-2.png) -->
+> ![chage command syntax](screens/simple_chage_syntax.png)
 
 ## 6. Summary
 -   **Change Password:** `passwd`

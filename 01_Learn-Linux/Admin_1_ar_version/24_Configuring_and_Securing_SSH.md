@@ -8,16 +8,19 @@
 ssh user@hostname_or_ip
 ```
 *البورت الافتراضي هو 22.*
-> ![connecting to host](screens/image-130.png)
-> ![ssh fingerprint](screens/image-132.png)
+> <!-- ![connecting to host](screens/image-130.png) -->
+> <!-- ![ssh fingerprint](screens/image-132.png) -->
+> ![ssh basic connection](screens/simple_ssh_connect.png)
 
 ## 3. طرق الدخول (Authentication)
 
 ### أ. الباسورد (Password Authentication)
-> ![SSH Connection & Authentication Flow](screens/infographic_ssh_flow.png)
+> <!-- ![SSH Connection & Authentication Flow](screens/infographic_ssh_flow.png) -->
+> ![ssh authentication concepts](screens/simple_ssh_auth.png)
+> ![ssh keygen commands syntax](screens/simple_ssh_keygen.png)
 
 سهلة بس مش آمنة أوي. أي حد ممكن يجرب باسوردات كتير (Brute Force) لحد ما يدخل.
-> ![password settings](screens/image-129.png)
+> <!-- ![password settings](screens/image-129.png) -->
 
 ### ب. المفاتيح (Key-Based Authentication) - **الصح**
 أكثر أماناً بكتير. بتعمل مفتاحين: واحد معاك (Private) وواحد ع السيرفر (Public). مستحيل حد يدخل غير لو معاه المفتاح الخاص.
@@ -28,7 +31,7 @@ ssh user@hostname_or_ip
     ssh-keygen -t rsa -b 4096
     ```
     *ده هيعمل ملفين في `~/.ssh/`: واحد اسمه `id_rsa` (ده سرك) و `id_rsa.pub` (ده اللي بتوزعه).*
-    > ![ssh-keygen](screens/image-134.png)
+    > <!-- ![ssh-keygen](screens/image-134.png) -->
 
 2.  **ارفع المفتاح العام للسيرفر:**
     ```bash
@@ -39,7 +42,7 @@ ssh user@hostname_or_ip
     ```bash
     ssh user@remote_ip
     ```
-    > ![ssh connection](screens/image-136.png)
+    > <!-- ![ssh connection](screens/image-136.png) -->
 
 ## 4. تأمين الـ SSH (Hardening)
 عشان تأمن السيرفر بجد، لازم تعدل ملف الإعدادات `/etc/ssh/sshd_config`.

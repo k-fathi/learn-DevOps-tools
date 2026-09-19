@@ -29,7 +29,9 @@ tail -f access.log   # Follow file in real-time (great for logs)
 > **Tip:** Run `vimtutor` in your terminal for an interactive tutorial.
 
 ### A. Modes
-> ![Vim Modes Quick Reference](screens/infographic_vim_modes.png)
+> <!-- ![Vim Modes Quick Reference](screens/infographic_vim_modes.png) -->
+> ![vim basic commands](screens/simple_vim_commands.png)
+> ![vim mode transitions](screens/simple_vim_transitions.png)
 
 1.  **Command Mode (Default):** For navigation and commands.
 2.  **Insert Mode:** For typing text (Press `i`).

@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nodeport-ns
+  labels:
+    env: dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-nodeport
+  labels:
+    tier: frontend
+    env: dev
+  namespace: nodeport-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      name: nginx-pod # will not be applied, btw.
+      labels:
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:kube
+          ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-nodeport
+  labels:
+    tier: frontend
+  namespace: nodeport-ns
+spec:
+  type: NodePort
+  selector: 
+    tier: frontend
+  ports:
+  - nodePort: 30001
+    port: 8080
+    targetPort: 80 

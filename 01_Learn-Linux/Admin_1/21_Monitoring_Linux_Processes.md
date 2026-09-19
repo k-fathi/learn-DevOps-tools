@@ -5,8 +5,9 @@ Linux provides real-time monitoring tools to track system performance, CPU usage
 
 ## 2. Top (`top`)
 The `top` command displays a dynamic, real-time view of the running system.
-> ![top command](screens/image-101.png)
-> ![top fields](screens/image-102.png)
+> <!-- ![top command](screens/image-101.png) -->
+> <!-- ![top fields](screens/image-102.png) -->
+> ![top command anatomy](screens/simple_top_anatomy.png)
 
 ### Interactive Keys
 | Key | Action |
@@ -23,7 +24,8 @@ A more user-friendly, colorful, and scrollable alternative to `top`.
 -   Allows selecting processes with arrow keys/mouse.
 -   Easier process killing (`F9`).
 -   Tree view (`F5`).
-> ![htop interface](screens/image-103.png)
+> <!-- ![htop interface](screens/image-103.png) -->
+> ![htop interface](screens/simple_htop_interface.png)
 
 > **Note:** Requires installation (`sudo apt install htop`).
 

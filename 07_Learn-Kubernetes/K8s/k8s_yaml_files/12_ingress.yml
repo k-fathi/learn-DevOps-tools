@@ -1,0 +1,215 @@
+# ingress
+# apiVersion: networking.k8s.io/v1
+# kind: ingress
+# metadata:
+#   name: nginx-ingress
+#   annotations:
+#     nginx.ingress.kubernates.io/rewrite-target: /
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#     - host: # DNS Name of the LoadBalancer or its IP
+#       http: 
+#         paths:
+#           - pathType: Prefix
+#             path: # /<path-name-you-want> 
+#             backend: 
+#               service: 
+#                 name: # service name
+#                 port:
+#                   number: # service port 
+
+#           - pathType: Exact 
+#             path: # /<path-name-you-want-2> 
+#             backend: 
+#               service: 
+#                 name: # service name - 2 
+#                 port:
+#                   number: # service port - 2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: one
+  template:
+    metadata:
+      labels:
+        app: one
+    spec:
+      initContainers:
+      - name: nginx-init-container
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'Hello From App -1' > /var/www/html/index.html"]
+        volumeMounts:
+        - name: vol-deploy-1
+          mountPath: /var/www/html
+
+      containers:
+      - name: nginx-container
+        image: nginx:kube
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: vol-deploy-1
+          mountPath: /usr/share/nginx/html 
+    
+      volumes:
+      - name: vol-deploy-1
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc-1
+spec:
+  type: ClusterIP
+  selector:
+    app: one
+  ports:
+  - port: 3000
+    targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: two
+  template:
+    metadata:
+      labels:
+        app: two
+    spec:
+      initContainers:
+      - name: nginx-init-container
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'Hello From App -2' > /var/www/html/index.html"]
+        volumeMounts:
+        - name: vol-deploy-2
+          mountPath: /var/www/html
+
+      containers:
+      - name: nginx-container
+        image: nginx:kube
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: vol-deploy-2
+          mountPath: /usr/share/nginx/html 
+      
+      volumes:
+      - name: vol-deploy-2
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc-2
+spec:
+  type: ClusterIP
+  selector:
+    app: two
+  ports:
+  - port: 4000
+    targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: three
+  template:
+    metadata:
+      labels:
+        app: three
+    spec:
+      initContainers:
+      - name: nginx-init-container
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'Hello From App -3' > /var/www/html/index.html"]
+        volumeMounts:
+        - name: vol-deploy-3
+          mountPath: /var/www/html
+
+      containers:
+      - name: nginx-container
+        image: nginx:kube
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: vol-deploy-3
+          mountPath: /usr/share/nginx/html 
+    
+      volumes:
+      - name: vol-deploy-3
+        emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc-3
+spec:
+  type: ClusterIP
+  selector:
+    app: three
+  ports:
+  - port: 5000
+    targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-3-apps
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: karim-apps.io
+    http:
+      paths:
+      - pathType: Exact
+        path: /app1
+        backend:
+          service: 
+            name: app-svc-1
+            port:
+              number: 3000
+      
+      - pathType: Prefix
+        path: /app2
+        backend:
+          service: 
+            name: app-svc-2
+            port:
+              number: 4000
+         
+      - pathType: Prefix
+        path: /app3
+        backend:
+          service: 
+            name: app-svc-3
+            port:
+              number: 5000
+         

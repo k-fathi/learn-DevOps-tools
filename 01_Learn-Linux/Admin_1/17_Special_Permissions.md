@@ -4,7 +4,8 @@
 Beyond the standard read, write, and execute permissions, Linux provides **Special Permissions** that alter the behavior of executables and directories. These include **SUID**, **SGID**, and the **Sticky Bit**.
 
 ### Quick Reference
-> ![Special Permissions Overview](screens/infographic_special_perms.png)
+> <!-- ![Special Permissions Overview](screens/infographic_special_perms.png) -->
+> ![special permissions concepts](screens/simple_special_perms.png)
 
 ## 2. SUID (Set User ID) - 4  **Symbol:** `s` (in User field)
 -   **Octal Value:** `4`
@@ -17,7 +18,7 @@ chmod u+s /usr/bin/passwd
 chmod 4755 /usr/bin/passwd
 ```
 *Output: `-rwsr-xr-x`*
-> ![suid example](screens/image-88.png)
+> <!-- ![suid example](screens/image-88.png) -->
 
 ## 3. SGID (Set Group ID)
 -   **Symbol:** `s` (in Group field)
@@ -33,7 +34,7 @@ chmod g+s /var/www/html
 chmod 2775 /var/www/html
 ```
 *Output: `drwxrwsr-x`*
-> ![sgid example](screens/image-89.png)
+> <!-- ![sgid example](screens/image-89.png) -->
 
 ## 4. Sticky Bit
 -   **Symbol:** `t` (in Others field)
@@ -47,7 +48,7 @@ chmod +t /tmp
 chmod 1777 /tmp
 ```
 *Output: `drwxrwxrwt`*
-> ![sticky bit example](screens/image-90.png)
+> <!-- ![sticky bit example](screens/image-90.png) -->
 
 ## 5. Umask (User File Creation Mask)
 Controls default permissions for new files/directories.

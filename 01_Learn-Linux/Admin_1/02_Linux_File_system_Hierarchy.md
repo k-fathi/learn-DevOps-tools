@@ -4,7 +4,10 @@
 Linux follows a **Single Inverted Tree** structure. Everything starts from the **Root Directory** (`/`), and all other directories and files branch off from there. Unlike Windows, which uses drive letters (C:, D:), Linux mounts devices to specific directories within this tree.
 
 ### Visual Reference
-> ![Linux File System Hierarchy](screens/infographic_filesystem.png)
+> <!-- ![Linux File System Hierarchy](screens/infographic_filesystem.png) -->
+
+> ![/ command logic](screens/simple_filesystem_tree.png)
+> ![important directories](screens/simple_important_dirs.png)
 
 ## 2. The File System Tree
 

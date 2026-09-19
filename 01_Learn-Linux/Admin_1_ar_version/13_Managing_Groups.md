@@ -5,15 +5,18 @@
 
 
 ### مخطط إدارة المجموعات
-> ![Linux Groups Management](screens/infographic_groups.png)
+> <!-- ![Linux Groups Management](screens/infographic_groups.png) -->
+> ![groups types summary](screens/simple_groups_types.png)
 
 ### أنواع الجروبات
 - **Primary Group (مجموعة أساسية):** بتتعمل أوتوماتيك بنفس اسم اليوزر.
 - **Secondary Groups (مجموعات إضافية):** دي اللي بتديك صلاحيات زيادة (زي `sudo` أو `docker`).
 
 > **الملف:** `/etc/group` هو اللي فيه كل الجروبات.
-> ![cat /etc/group](screens/image-32.png)
-> ![group file structure](screens/image-33.png)
+> <!-- ![cat /etc/group](screens/image-32.png) -->
+> <!-- ![group file structure](screens/image-33.png) -->
+> ![/etc/group file structure](screens/simple_etc_group.png)
+> ![group commands syntax](screens/simple_group_cmds.png)
 
 ## 2. إدارة الجروبات
 
@@ -21,19 +24,19 @@
 ```bash
 sudo groupadd devs
 ```
-> ![GID assignment](screens/image-49.png)
+> <!-- ![GID assignment](screens/image-49.png) -->
 
 ### مسح جروب
 ```bash
 sudo groupdel devs
 ```
-> ![groupdel example](screens/image-52.png)
+> <!-- ![groupdel example](screens/image-52.png) -->
 
 ### تغيير اسم جروب
 ```bash
 sudo groupmod -n new_name old_name
 ```
-> ![groupmod example](screens/image-53.png)
+> <!-- ![groupmod example](screens/image-53.png) -->
 
 ## 3. إدارة الأعضاء
 
@@ -41,21 +44,21 @@ sudo groupmod -n new_name old_name
 ```bash
 groups karim
 ```
-> ![groups command](screens/image-54.png)
+> <!-- ![groups command](screens/image-54.png) -->
 
 ### ضيف يوزر لجروب
 استخدم `usermod` مع `-aG` (Append Group).
 ```bash
 sudo usermod -aG devs karim
 ```
-> ![add user to group](screens/image-50.png)
+> <!-- ![add user to group](screens/image-50.png) -->
 
 ### شيل يوزر من جروب
 استخدم `gpasswd` أو `deluser`.
 ```bash
 sudo gpasswd -d karim devs
 ```
-> ![gpasswd remove](screens/image-51.png)
+> <!-- ![gpasswd remove](screens/image-51.png) -->
 
 ## 4. الزتونة (Summary)
 - **Primary Group:** بتتولد مع اليوزر.

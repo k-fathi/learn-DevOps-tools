@@ -23,9 +23,11 @@
 الروابط بتخليك تفتح نفس الداتا بأكتر من اسم ملف.
 
 ### مقارنة سريعة
-> ![Hard vs Soft Links](screens/infographic_links.png)
+> <!-- ![Hard vs Soft Links](screens/infographic_links.png) -->
 
-> ![Hard vs Soft Links Diagram](screens/image-7.png)
+> <!-- ![Hard vs Soft Links Diagram](screens/image-7.png) -->
+> ![ln command syntax](screens/simple_links.png)
+> ![inode vs softlink concept](screens/simple_inode_concept.png)
 
 ### أ. الرابط الرمزي (Soft Link / Symbolic Link)
 - **الفكرة:** زي الـ **Shortcut** في الويندوز بالظبط. هو ملف بيشاور على **اسم** ملف تاني.

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+      version: v1
+      environment: production
+  strategy:
+  #===================
+    type: Recreate   #
+  #===================
+
+    # type: RollingUpdate
+    # rollingUpdate:
+    #   maxUnavailable: 25%
+    #   maxSurge: 25%
+ 
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        app: nginx
+        version: v1
+        environment: production
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          protocol: TCP
+

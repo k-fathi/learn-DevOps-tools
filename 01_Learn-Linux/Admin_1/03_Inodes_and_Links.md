@@ -24,9 +24,11 @@ An **Index Node (Inode)** allows the file system to track files. It stores metad
 Links allow multiple filenames to refer to the same file data.
 
 ### Visual Comparison
-> ![Hard vs Soft Links](screens/infographic_links.png)
+> <!-- ![Hard vs Soft Links](screens/infographic_links.png) -->
 
-> ![Hard vs Soft Links Diagram](screens/image-7.png)
+> <!-- ![Hard vs Soft Links Diagram](screens/image-7.png) -->
+> ![ln command syntax](screens/simple_links.png)
+> ![inode vs softlink concept](screens/simple_inode_concept.png)
 
 ### A. Soft Link (Symbolic Link)
 -   **Concept:** A pointer to another **filename** (like a shortcut in Windows).

@@ -4,26 +4,28 @@
 لينكس نظام "متعدد المستخدمين" (Multi-user)، يعني كذا واحد يقدروا يستخدموه في نفس الوقت. إدارة اليوزرز وصلاحياتهم هي "ألف باء" إدارة أنظمة.
 
 ### أنواع الحسابات
-> ![Linux User Types & Accounts](screens/infographic_users_types.png)
+> <!-- ![Linux User Types & Accounts](screens/infographic_users_types.png) -->
+> ![user types summary](screens/simple_user_types.png)
 1.  **المدير (Root):** الـ ID بتاعه (`UID`) دايماً `0`.
 2.  **حسابات النظام (System Users):** الـ `UID` من `1` لـ `999`. دي حسابات بتشغل برامج زي Apache أو MySQL (مش ناس حقيقيين).
 3.  **المستخدمين العاديين (Regular Users):** الـ `UID` بيبدأ من `1000`. دول البني آدمين زيي وزيك.
 
 ## 2. ملفات مهمة جداً
 - `/etc/passwd`: فيه بيانات كل اليوزرز.
-    > ![passwd file content](screens/image-48.png)
+    > <!-- ![passwd file content](screens/image-48.png) -->
 - `/etc/shadow`: فيه الباسوردات المشفرة.
 - `/etc/group`: فيه بيانات المجموعات.
 
 **هيكلية `/etc/passwd`:**
-> ![passwd file structure](screens/image-43.png)
+> <!-- ![passwd file structure](screens/image-43.png) -->
+> ![/etc/passwd structure](screens/simple_etc_passwd.png)
 
 **إزاي تعرف بيانات يوزر؟**
 ```bash
 id karim
 # هيعرضلك الـ UID والـ GID والمجموعات اللي هو فيها
 ```
-> ![id command output](screens/image-29.png)
+> <!-- ![id command output](screens/image-29.png) -->
 
 ## 3. إنشاء مستخدم جديد (`useradd`)
 
@@ -43,11 +45,12 @@ useradd [options] username
 # اعمل يوزر اسمه karim، واعمله Home، وخليه يستخدم Bash، وضيفه في جروب sudo
 sudo useradd -m -s /bin/bash -c "DevOps Engineer" -G sudo karim
 ```
-> ![useradd example](screens/image-40.png)
+> <!-- ![useradd example](screens/image-40.png) -->
+> ![user commands syntax](screens/simple_user_cmds.png)
 
 > [!TIP]
 > لو عايز تريح دماغك، استخدم أمر `adduser` (لو موجود)، ده بيسألك أسئلة وبيعمل كل حاجة أوتوماتيك.
-> ![adduser interactive](screens/image-42.png)
+> <!-- ![adduser interactive](screens/image-42.png) -->
 
 ## 4. تعديل المستخدم (`usermod`)
 
@@ -58,7 +61,7 @@ usermod [options] username
 
 **أهم الاختيارات:**
 - `-aG`: ضيف اليوزر لجروب جديد (من غير ما تشيله من الجروبات القديمة). **ركز في `-a` دي عشان مهمة**.
-    > ![usermod append group](screens/image-47.png)
+    > <!-- ![usermod append group](screens/image-47.png) -->
 - `-L`: اقفل الحساب (Lock).
 - `-U`: افتح الحساب (Unlock).
 
@@ -72,7 +75,7 @@ sudo usermod -aG docker karim
 ```bash
 sudo passwd karim
 ```
-> ![passwd command](screens/image-45.png)
+> <!-- ![passwd command](screens/image-45.png) -->
 
 ## 5. مسح المستخدم (`userdel`)
 

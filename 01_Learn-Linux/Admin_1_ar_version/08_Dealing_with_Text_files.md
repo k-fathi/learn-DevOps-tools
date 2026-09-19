@@ -29,7 +29,9 @@ tail -f access.log   # (Follow) راقب الملف وهو بيتكتب لايف
 > **نصيحة:** اكتب `vimtutor` في الترمنال عشان تاخد كورس تفاعلي سريع.
 
 ### أ. الأوضاع (Modes)
-> ![Vim Modes Quick Reference](screens/infographic_vim_modes.png)
+> <!-- ![Vim Modes Quick Reference](screens/infographic_vim_modes.png) -->
+> ![vim basic commands](screens/simple_vim_commands.png)
+> ![vim mode transitions](screens/simple_vim_transitions.png)
 
 1.  **Command Mode (الأساسي):** للتحرك والأوامر (أول ما تفتح بتلاقي نفسك فيه).
 2.  **Insert Mode:** للكتابة (دوس `i`).

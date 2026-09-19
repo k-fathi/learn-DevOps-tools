@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc
+  namespace: petclinic-namespace
+  labels:
+    tier: app
+spec:
+  # type: ClusterIP
+  type: NodePort
+  selector: 
+    tier: app 
+  ports:
+  - port: 80
+    targetPort: 8080
+    nodePort: 30080

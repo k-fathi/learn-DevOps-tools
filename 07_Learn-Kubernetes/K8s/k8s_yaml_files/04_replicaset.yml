@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx.rs
+  labels:
+    env: rs-test-1
+  namespace: default  #custom-app01-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      name: nginx-pod
+          # will not be used, as the replicasets set randoms name to the pods 
+      labels:
+        env: dev
+    spec:
+      containers:
+        - name: nginx-cont-1
+          image: nginx:kube
+          ports: 
+            - containerPort: 80
+        - name: nginx-cont-2
+          image: nginx:kube
+          ports:  
+          - containerPort: 80

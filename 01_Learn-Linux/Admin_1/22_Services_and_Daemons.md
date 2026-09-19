@@ -4,7 +4,8 @@
 A **Service** (or Daemon) is a background process that waits for requests or performs tasks without user intervention (e.g., `sshd`, `httpd`). **Systemd** is the system and service manager for modern Linux distributions.
 
 ### Service Lifecycle
-> ![systemd Service Management](screens/infographic_systemd.png)
+> <!-- ![systemd Service Management](screens/infographic_systemd.png) -->
+> ![systemd service states](screens/simple_systemd_states.png)
 
 ## 2. Managing Services (`systemctl`)
 
@@ -13,8 +14,9 @@ A **Service** (or Daemon) is a background process that waits for requests or per
 systemctl list-units --type=service
 systemctl list-unit-files
 ```
-> ![list units](screens/image-105.png)
-> ![list unit files](screens/image-106.png)
+> <!-- ![list units](screens/image-105.png) -->
+> <!-- ![list unit files](screens/image-106.png) -->
+> ![list systemctl units](screens/simple_list_units.png)
 
 ### Basic Commands
 | Action | Command |
@@ -25,13 +27,14 @@ systemctl list-unit-files
 | **Reload** | `sudo systemctl reload service_name` |
 | **Check Status** | `systemctl status service_name` |
 
-> ![service status](screens/image-108.png)
+> <!-- ![service status](screens/image-108.png) -->
+> ![systemctl commands syntax](screens/simple_systemctl_cmds.png)
 
 ### Failed Services
 ```bash
 systemctl --failed
 ```
-> ![failed services](screens/image-104.png)
+> <!-- ![failed services](screens/image-104.png) -->
 
 ## 3. Boot Behavior
 Control whether a service starts automatically when the computer turns on.
@@ -47,13 +50,13 @@ Control whether a service starts automatically when the computer turns on.
 
 ## 4. Service States
 -   **active (running):** Service is currently running.
-    > ![active status](screens/image-109.png)
+    > <!-- ![active status](screens/image-109.png) -->
 -   **inactive (dead):** Service is stopped.
-    > ![inactive status](screens/image-112.png)
+    > <!-- ![inactive status](screens/image-112.png) -->
 -   **enabled:** Will start at boot.
 -   **disabled:** Will NOT start at boot.
 -   **masked:** Completely locked, cannot be started manually or automatically.
-    > ![masked service](screens/image-113.png)
+    > <!-- ![masked service](screens/image-113.png) -->
 
 ## 4. Summary
 -   **systemctl start/stop/restart:** Control state.

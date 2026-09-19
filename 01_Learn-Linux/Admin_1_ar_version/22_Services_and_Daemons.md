@@ -4,7 +4,8 @@
 الـ **Service** (أو Daemon) هو برنامج بيشتغل في الخلفية، بيستنى طلبات أو بينفذ وظائف من غير ما حد يشغله (زي `httpd` بتاع الويب، أو `sshd` بتاع الاتصال). المدير المسئول عنهم في اللينكس الحديث هو **systemd**.
 
 ## 2. خدمة دورة الحياة (Service Lifecycle)
-> ![systemd Service Management](screens/infographic_systemd.png)
+> <!-- ![systemd Service Management](screens/infographic_systemd.png) -->
+> ![systemd service states](screens/simple_systemd_states.png)
 
 ## 2. إدارة الخدمات (`systemctl`)
 
@@ -16,8 +17,9 @@ systemctl list-units --type=service
 # اعرض كل الخدمات (شغالة أو لا)
 systemctl list-unit-files
 ```
-> ![list units](screens/image-105.png)
-> ![list unit files](screens/image-106.png)
+> <!-- ![list units](screens/image-105.png) -->
+> <!-- ![list unit files](screens/image-106.png) -->
+> ![list systemctl units](screens/simple_list_units.png)
 
 ### أوامر التحكم الأساسية
 | الأمر | الوظيفة |
@@ -28,13 +30,14 @@ systemctl list-unit-files
 | `sudo systemctl reload <name>` | اقرأ ملفات الإعدادات من غير ما تقفل (لو البرنامج بيدعم ده). |
 | `systemctl status <name>` | وريني حالة الخدمة (شغالة ولا ميتة؟). |
 
-> ![service status](screens/image-108.png)
+> <!-- ![service status](screens/image-108.png) -->
+> ![systemctl commands syntax](screens/simple_systemctl_cmds.png)
 
 ### الخدمات اللي فشلت (Failed)
 ```bash
 systemctl --failed
 ```
-> ![failed services](screens/image-104.png)
+> <!-- ![failed services](screens/image-104.png) -->
 
 ## 3. التحكم في بدء التشغيل (Boot)
 إزاي تخلي الخدمة تشتغل لوحدها لما الجهاز يفتح؟
@@ -50,13 +53,13 @@ systemctl --failed
 
 ## 4. حالات الخدمة (States)
 - **active (running):** شغالة وزي الفل.
-    > ![active status](screens/image-109.png)
+    > <!-- ![active status](screens/image-109.png) -->
 - **inactive (dead):** واقفة.
-    > ![inactive status](screens/image-112.png)
+    > <!-- ![inactive status](screens/image-112.png) -->
 - **enabled:** هتشتغل لما الجهاز يرستر.
 - **disabled:** مش هتشتغل لما الجهاز يرستر.
 - **masked:** مقفولة بضبة ومفتاح (مينفعش تشغلها حتى يدوي).
-    > ![masked service](screens/image-113.png)
+    > <!-- ![masked service](screens/image-113.png) -->
 
 ## 5. 🏆 مثال من سوق العمل: عمل خدمة خاصة (Custom Service)
 **السيناريو:** عندك سكربت بايثون `app.py` عايزة يشتغل في الخلفية، ولو "كرّش" (Crashed) يشتغل تاني لوحده، ويقوم مع بداية الجهاز.

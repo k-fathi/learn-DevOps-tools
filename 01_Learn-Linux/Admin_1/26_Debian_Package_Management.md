@@ -4,7 +4,8 @@
 Managing software is critical. Debian-based systems (Ubuntu, Kali, Mint) use **APT** (Advanced Package Tool) and **dpkg**.
 
 ### Package Management Cycle
-> ![Debian Package Management Lifecycle](screens/infographic_debian_packages.png)
+> <!-- ![Debian Package Management Lifecycle](screens/infographic_debian_packages.png) -->
+> ![debian package lifecycle](screens/simple_debian_lifecycle.png)
 
 ## 2. Low-Level Management (`dpkg`)
 Directly manages `.deb` files. Does **not** resolve dependencies.
@@ -17,9 +18,11 @@ Directly manages `.deb` files. Does **not** resolve dependencies.
 | **Check Info** (Local file) | `dpkg --info package.deb` |
 | **Check Contents** (Local file) | `dpkg -c package.deb` |
 
+> ![dpkg commands syntax](screens/simple_dpkg_cmds.png)
+
 ## 3. High-Level Management (`apt`)
 Retrieves packages from repositories and resolves dependencies automatically.
-> ![apt update](screens/image-118.png)
+> <!-- ![apt update](screens/image-118.png) -->
 
 | Action | Command |
 | :--- | :--- |
@@ -32,17 +35,18 @@ Retrieves packages from repositories and resolves dependencies automatically.
 
 ### Apt Options Visualized
 **List Options:**
-> ![apt list -a](screens/image-120.png)
-> ![apt list installed](screens/image-121.png)
+> <!-- ![apt list -a](screens/image-120.png) -->
+> <!-- ![apt list installed](screens/image-121.png) -->
 
 **Search:**
-> ![apt search](screens/image-122.png)
+> <!-- ![apt search](screens/image-122.png) -->
 
 **Show:**
-> ![apt show](screens/image-123.png)
+> <!-- ![apt show](screens/image-123.png) -->
 
 **Dependencies:**
-> ![apt depends](screens/image-124.png)
+> <!-- ![apt depends](screens/image-124.png) -->
+> ![apt commands syntax](screens/simple_apt_cmds.png)
 
 ### Repositories
 -   **Source File:** `/etc/apt/sources.list`

@@ -4,7 +4,8 @@
 غير الصلاحيات العادية (r, w, x)، لينكس فيه صلاحيات خاصة بتغير سلوك الملفات والفولدرات: **SUID**, **SGID**, **Sticky Bit**.
 
 ## 2. نظرة سريعة (Special Permissions Overview)
-> ![Special Permissions Overview](screens/infographic_special_perms.png)
+> <!-- ![Special Permissions Overview](screens/infographic_special_perms.png) -->
+> ![special permissions concepts](screens/simple_special_perms.png)
 
 ## 2. SUID (Set User ID)
 - **الرمز:** `s` (في خانة اليوزر Owner).
@@ -18,7 +19,7 @@ chmod u+s /usr/bin/passwd
 chmod 4755 /usr/bin/passwd
 ```
 *الشكل: `-rwsr-xr-x`*
-> ![suid example](screens/image-88.png)
+> <!-- ![suid example](screens/image-88.png) -->
 
 ## 3. SGID (Set Group ID)
 - **الرمز:** `s` (في خانة الجروب Group).
@@ -34,7 +35,7 @@ chmod g+s /var/www/html
 chmod 2775 /var/www/html
 ```
 *الشكل: `drwxrwsr-x`*
-> ![sgid example](screens/image-89.png)
+> <!-- ![sgid example](screens/image-89.png) -->
 
 ## 4. Sticky Bit
 - **الرمز:** `t` (في خانة Others).
@@ -48,7 +49,7 @@ chmod +t /tmp
 chmod 1777 /tmp
 ```
 *الشكل: `drwxrwxrwt`*
-> ![sticky bit example](screens/image-90.png)
+> <!-- ![sticky bit example](screens/image-90.png) -->
 
 ## 5. الزتونة (Summary)
 - **SUID (4):** اشتغل كأنك صاحب الملف (خطير، زي `passwd`).

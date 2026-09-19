@@ -1,0 +1,355 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* ───────── Design Tokens ───────── */
+:root {
+    color-scheme: dark;
+    --bg: #030712;
+    --bg-elevated: rgba(15, 23, 42, 0.45);
+    --bg-card: rgba(15, 23, 42, 0.35);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.12);
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-2: #818cf8;
+    --success: #34d399;
+    --warning: #fbbf24;
+    --danger: #fb7185;
+}
+
+/* ───────── Reset & Base ───────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html {
+    font-size: 13.5px;
+}
+html, body {
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(ellipse at 15% 50%, rgba(99, 102, 241, 0.12), transparent 50%),
+        radial-gradient(ellipse at 85% 30%, rgba(56, 189, 248, 0.10), transparent 50%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+button { cursor: pointer; font: inherit; }
+input, textarea { font: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+/* ───────── App Shell: 2 rows (Top: 2 cols, Bottom: 2 cols) ───────── */
+.app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.top-row {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    gap: 1rem;
+}
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Columns flex to fill their grid cells */
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 650px; /* Adjusted to leave some room for bottom row on normal screens */
+}
+
+/* ───────── Glass Surface ───────── */
+.surface {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+}
+
+.surface-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ───────── Cards ───────── */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    backdrop-filter: blur(8px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.card-body {
+    padding: 0.75rem 1rem;
+}
+
+/* ───────── Typography ───────── */
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.25rem;
+}
+.title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+.panel-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+}
+.panel-caption {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+.mono {
+    font-family: 'Fira Code', ui-monospace, monospace;
+}
+.muted { color: var(--text-muted); }
+.success { color: #a7f3d0; }
+.danger { color: #fecdd3; }
+.warn { color: #fde68a; }
+
+/* ───────── Badges ───────── */
+.page-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--accent-2);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.5);
+    color: var(--text);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* ───────── Buttons & Inputs ───────── */
+.input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    color: var(--text);
+    transition: border-color 150ms;
+}
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.button, .button-secondary, .button-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 150ms ease;
+}
+
+.button {
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.25);
+}
+.button:hover {
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+}
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.button-dark {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+.button-dark:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+
+/* ───────── Helpers ───────── */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.surface-body {
+    padding: 0.75rem 1rem;
+}
+
+/* ───────── Editor (left column) ───────── */
+.editor-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+    min-height: 0;
+}
+.editor-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.editor-frame {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* ───────── Canvas (center column) ───────── */
+.canvas-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+.canvas-inner {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    background: radial-gradient(ellipse at top center, rgba(99,102,241,0.06), transparent 60%);
+}
+.cache-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ───────── Inspector (right column) ───────── */
+.inspector-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.step-json {
+    font-size: 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    max-height: 10rem;
+    overflow-y: auto;
+}
+
+/* ───────── Logs (right column) ───────── */
+.log-shell {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.panel-scroll {
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+/* ───────── Responsive ───────── */
+@media (max-width: 1100px) {
+    .top-row {
+        grid-template-columns: 1fr;
+    }
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+}

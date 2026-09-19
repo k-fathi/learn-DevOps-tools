@@ -6,8 +6,9 @@
 ## 2. الأمر `top`
 ده "مراسلنا من قلب الحدث". بيعرضلك جدول بيتحرك كل شوية فيه استهلاك الموارد وترتيب العمليات.
 
-> ![top command](screens/image-101.png)
-> ![top fields](screens/image-102.png)
+> <!-- ![top command](screens/image-101.png) -->
+> <!-- ![top fields](screens/image-102.png) -->
+> ![top command anatomy](screens/simple_top_anatomy.png)
 
 ### أزرار التحكم (Interactive Keys)
 وأنت جوه `top`، ممكن تدوس:
@@ -23,7 +24,8 @@
 - ممكن تختار العملية بالأسهم.
 - دوس `F9` عشان تقتل العملية.
 - دوس `F5` عشان تعرضهم في شكل شجرة.
-> ![htop interface](screens/image-103.png)
+> <!-- ![htop interface](screens/image-103.png) -->
+> ![htop interface](screens/simple_htop_interface.png)
 
 > **ملحوظة:** غالباً بتحتاج تسطبها الأول (`sudo apt install htop`).
 

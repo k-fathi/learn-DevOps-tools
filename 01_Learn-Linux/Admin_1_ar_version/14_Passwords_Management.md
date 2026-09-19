@@ -2,7 +2,9 @@
 
 ## 1. مقدمة
 لينكس بيخزن الباسوردات (مشفرة طبعاً) في ملف `/etc/shadow`. الملف ده محدش يقدر يقراه غير الـ Root.
-> ![password aging timeline](screens/image-69-2.png)
+> <!-- ![password aging timeline](screens/image-69-2.png) -->
+> ![chage command syntax](screens/simple_chage_syntax.png)
+> ![/etc/shadow structure](screens/simple_etc_shadow.png)
 
 **بيانات الملف ده بتحدد:**
 - الباسورد إيه.

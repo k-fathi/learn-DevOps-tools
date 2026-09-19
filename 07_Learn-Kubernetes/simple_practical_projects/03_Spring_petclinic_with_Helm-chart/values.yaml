@@ -1,0 +1,67 @@
+imagePullPolicy: IfNotPresent
+# 01__namespace.yaml
+namespace:
+  name: "petclinic-namespace"
+  labels:
+    app: "petclinic"
+    env: "dev"
+
+# 02_db_deployment.yaml
+database:
+  name: db-deploy
+  image: 
+    repository: mysql
+    tag: 8.4.5
+  labels:
+    tier: db
+  selectorLabels:
+    tier: db
+  replicaCount: 1
+  port: 3306
+  env:
+    MYSQL_ROOT_PASSWORD:  petclinic
+    MYSQL_DATABASE: petclinic
+    MYSQL_USER: petclinic
+    MYSQL_PASSWORD: petclinic
+
+# 03_db_service.yaml
+dbService:
+  name: db-svc
+  type: ClusterIP
+  labels:
+    tier: db
+  selectorLabels:
+    tier: db
+  port: 3306
+
+# 04_app_deployment.yaml
+appDeployment:
+  name: app-deploy
+  labels:
+    tier: app
+  selectorLabels:
+    tier: app
+  replicaCount: 3
+  image:
+    repository: springcommunity/spring-petclinic
+    tag: 3.5.6
+  port: 8080
+  
+  env:
+    # SPRING_DATASOURCE_URL: jdbc:mysql://db-svc:3306/petclinic
+    SPRING_DATASOURCE_USERNAME: petclinic
+    SPRING_DATASOURCE_PASSWORD: petclinic
+    SPRING_PROFILES_ACTIVE: mysql
+
+
+# 05_app_service.yaml
+appService:
+  name: app-svc
+  labels:
+    tier: app
+  selectorLabels:
+    tier: app
+  type: NodePort
+  port: 80
+  targetPort: 8080
+  nodePort: 30080

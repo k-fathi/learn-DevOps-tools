@@ -4,7 +4,8 @@
 الأرشفة (Archiving) يعني تجمع كذا ملف في ملف واحد (حزمة). والضغط (Compression) يعني تصغر حجم الملفات دي. في لينكس، العمليتين دول غالباً بيتعملوا مع بعض باستخدام الجوكر `tar`.
 
 ## 2. أدوات الضغط (Compression Tools)
-> ![Compression & Archiving Overview](screens/image-94.png)
+> <!-- ![Compression & Archiving Overview](screens/image-94.png) -->
+> ![compression concepts](screens/simple_compression.png)
 
 الأدوات دي بتضغط الملفات (كل ملف لوحده).
 
@@ -14,12 +15,13 @@
 | **bzip2** | `.bz2` | متوسط | كويسة | `bzip2 file` | `bunzip2 file.bz2` |
 | **xz** | `.xz` | بطيء | عالية جداً | `xz file` | `unxz file.xz` |
 
-> ![gzip example](screens/image-91.png)
-> ![bzip2 example](screens/image-92.png)
-> ![xz example](screens/image-93.png)
+> <!-- ![gzip example](screens/image-91.png) -->
+> <!-- ![bzip2 example](screens/image-92.png) -->
+> <!-- ![xz example](screens/image-93.png) -->
+> ![compression commands syntax](screens/simple_compress_cmds.png)
 
 ### مقارنة الأداء (Performance Comparison)
-> ![compression comparison](screens/image-94.png)
+> <!-- ![compression comparison](screens/image-94.png) -->
 
 ## 3. الأرشفة باستخدام `tar`
 الأمر `tar` (Tape ARchive) هو الأساس. بيجمع الملفات وممكن يضغطها كمان في نفس الوقت.
@@ -48,7 +50,8 @@ tar -czf archive.tar.gz folder/
 # استخدام Xz (أعلى ضغط ممكن)
 tar -cJf archive.tar.xz folder/
 ```
-> ![tar create example](screens/image-96.png)
+> <!-- ![tar create example](screens/image-96.png) -->
+> ![tar commands syntax](screens/simple_tar_cmds.png)
 
 ### فك الضغط (Extract)
 ```bash

@@ -1,0 +1,167 @@
+---
+# Regular Pod with a single container
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: nginx-pod
+    labels:
+      env: dev
+      tier: front
+  spec:
+    containers:
+      - name: nginx-xont
+        image: nginx
+        ports:
+          - containerPort: 80
+            protocol: TCP
+
+---
+
+# from command: k run pod --image=nginx:kube  --dry-run=client -o yaml >> K8s/k8s_yaml_files/01_pods.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod
+  name: pod
+spec:
+  containers:
+  - image: nginx:kube
+    name: pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+---
+# Multi-Contaienrs Pod: 1. Init container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-container-pod
+spec:
+    initContainers: # <-- init containers are defined here
+    - name: init-container
+      image: busybox
+      command: ['sh', '-c', 'echo "<h1>Hello, Karim! - Init Cotnainer</h1>" > /var/www/index.html && sleep 5'] 
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: shared-vol
+        mountPath: /var/www/index/html
+    # more init containers can be defined here:
+    #                ...
+    #                ...
+    #                ...
+    # main containers are defined here 
+    containers:
+    - name: main-container
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+      - containerPort: 80
+      volumeMounts:
+      - name: shared-vol
+        mountPath: /usr/share/nginx/html
+
+    volumes:
+    - name: shared-vol
+      emptyDir: {}
+
+---
+
+# Multi-Container Pod: 2. Sidecar Container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-container-pod
+  labels:
+    env: dev
+    tier: front
+spec:
+  restartPolicy: Never
+  containers:
+    - name: nginx-container
+      image: nginx:kube
+      imagePullPolicy: IfNotPresent
+      ports:
+      - containerPort: 80
+      volumeMounts:
+      - name: shared-volume
+        mountPath: /usr/share/nginx/html
+      - name: logs
+        mountPath: /var/log/nginx
+
+    - name: sidecar-container
+      image: busybox 
+      imagePullPolicy: IfNotPresent
+      command: ["sh", "-c"]
+      args:
+      - |
+        echo 'Hello From Sidecar Container!' > /var/www/html/index.html
+        tail -f /var/log/nginx/access.log
+      volumeMounts:
+      - name: shared-volume
+        mountPath: /var/www/html
+      - name: logs
+        mountPath: /var/log/nginx
+    
+  volumes:
+    - name: shared-volume
+      emptyDir: {}
+    - name: logs
+      emptyDir: {}
+---
+# Multi-Container Pod: 3. Adapter Container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: adapter-container-pod
+  labels:
+    env: dev
+    tier: front
+spec:
+  containers:
+  - name: main-container
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sh", "-c"]
+    args:
+    - |
+      while true; do echo "UP" >> /var/log/status.log; sleep 5; done
+    volumeMounts:
+    - name: adapter-vol
+      mountPath: /var/log
+    
+  - name: adapter-container
+    image: alpine
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sh", "-c"]
+    args: 
+    - |
+      while true;do
+        if [ -f /var/log/status.log ]; then  
+          STATUS=$(tail -n 1 /var/log/status.log)
+          if [ "$STATUS" == "UP" ]; then
+            echo "app_status 1" > /var/metrics/metrics.prom 
+          else
+            echo "app_status 0" > /var/metrics/metrics.prom
+          fi
+        fi
+        sleep 5
+      done
+
+    volumeMounts:
+    - name: adapter-vol
+      mountPath: /var/log
+
+    - name: metrics-vol
+      mountPath: /var/metrics
+
+  volumes:
+  - name: adapter-vol
+    emptyDir: {}
+
+  - name: metrics-vol
+    emptyDir: {}
+---

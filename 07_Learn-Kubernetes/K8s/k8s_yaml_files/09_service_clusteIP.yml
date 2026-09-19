@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-clusterip-1
+  labels:
+    env: dev
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend-nginx
+  template:
+    metadata:
+      name: nginx-pod # will not be applied, btw. 
+      labels:
+        tier: frontend-nginx
+    spec:
+      containers:
+      - name: ngxin-container 
+        image: nginx:kube
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-clusterip-1
+spec:
+  type: ClusterIP
+  selector:
+    tier: frontend-nginx
+  ports:
+    - port: 8080
+      targetPort: 80
+      

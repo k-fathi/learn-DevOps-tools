@@ -5,7 +5,9 @@
 بعكس الويندوز اللي بيستخدم حروف للبارتيشن (C:, D:)، لينكس بيعمل "Mount" للأجهزة جوه فولدرات في الشجرة دي.
 
 ### صورة توضيحية
-> ![Linux File System Hierarchy](screens/infographic_filesystem.png)
+> <!-- ![Linux File System Hierarchy](screens/infographic_filesystem.png) -->
+> ![/ command logic](screens/simple_filesystem_tree.png)
+> ![important directories](screens/simple_important_dirs.png)
 
 ## 2. شجرة الملفات (The File System Tree)
 

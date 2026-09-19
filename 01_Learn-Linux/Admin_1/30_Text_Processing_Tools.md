@@ -2,7 +2,8 @@
 
 ## 1. Introduction
 Linux excels at text processing. Tools like `cut`, `tr`, and `tee` allow you to manipulate data streams efficiently from the command line.
-> ![Linux Pipes & Redirection](screens/infographic_pipes.png)
+> <!-- ![Linux Pipes & Redirection](screens/infographic_pipes.png) -->
+> ![text tools summary](screens/simple_text_tools_summary.png)
 
 ## 2. Cut (`cut`)
 Extract sections from each line of input.

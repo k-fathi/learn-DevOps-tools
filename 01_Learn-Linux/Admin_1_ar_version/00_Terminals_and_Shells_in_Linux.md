@@ -3,7 +3,8 @@
 ## 1. الصورة الكاملة (The Big Picture)
 عشان تفهم اللينكس شغال إزاي، لازم تفرق بين 3 حاجات أساسية. تخيل الموضوع كأنه مطعم:
 
-> ![Terminal vs Shell vs Kernel Infographic](screens/infographic_terminal_shell_kernel.png)
+> <!-- ![Terminal vs Shell vs Kernel Infographic](screens/infographic_terminal_shell_kernel.png) -->
+> ![tty and shell commands](screens/simple_terminal_shell.png)
 
 ### تشبيه المطعم (The Restaurant Analogy 🍽️)
 1.  **الزبون (User):** ده أنت! عايز تطلب حاجة (مثلاً: "هاتلي قائمة الملفات").
@@ -21,7 +22,7 @@
 ## 3. أشهر أنواع الـ Shells
 1.  **`sh` (Bourne Shell):** الجد الأكبر لكل الـ Shells. قديم وبسيط.
 2.  **`bash` (Bourne Again Shell):** ده "الزعيم". الأشهر والأكثر استخداماً في أغلب توزيعات اللينكس (Ubuntu, CentOS, etc.).
-3.  **`zsh` (Z Shell):** ده "الروق". نسخة متطورة من bash فيها مميزات وألوان وثيمات (MacOS بيستخدمه دلوقت).
+3.  **`zsh` (Z Shell):** نسخة متطورة من bash فيها مميزات وألوان وثيمات (MacOS بيستخدمه دلوقت).
 4.  **`fish` (Friendly Interactive Shell):** "الصديق". سهل جداً وبيكمل الأوامر لوحده (Auto-suggestion) من غير إعدادات كتير.
 
 ## 4. إزاي تفتح Shell؟

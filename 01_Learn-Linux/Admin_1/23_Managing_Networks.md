@@ -4,7 +4,9 @@
 Networking is the backbone of modern computing. Linux provides powerful tools to configure, monitor, and troubleshoot network connections.
 
 ### Network Configuration Guide
-> ![Network Configuration in Linux](screens/infographic_networking.png)
+> <!-- ![Network Configuration in Linux](screens/infographic_networking.png) -->
+> ![network interfaces concept](screens/simple_network_interfaces.png)
+> ![network commands syntax](screens/simple_network_cmds.png)
 
 ## 2. Naming Convention
 Network Interface Cards (NICs) have specific names:

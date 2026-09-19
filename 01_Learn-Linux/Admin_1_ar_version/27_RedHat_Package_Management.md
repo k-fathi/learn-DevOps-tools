@@ -4,7 +4,8 @@
 في عيلة Red Hat (RHEL, CentOS, Fedora)، بنستخدم **DNF** (النسخة المتطورة من YUM) و **RPM**. الامتداد هنا هو `.rpm`.
 
 ## 2. دورة إدارة الحزم (Package Management Cycle)
-> ![RedHat Package Management Lifecycle](screens/infographic_redhat_packages.png)
+> <!-- ![RedHat Package Management Lifecycle](screens/infographic_redhat_packages.png) -->
+> ![redhat package lifecycle](screens/simple_redhat_lifecycle.png)
 
 ## 2. الإدارة المنخفضة (`rpm`)
 زي `dpkg` في ديبيان. بيتعامل مع الملفات مباشرة ومش بيحل Dependencies.
@@ -17,9 +18,11 @@
 | **استعلام (هل البرنامج عندي؟)** | `rpm -q package_name` |
 | **عرض كل اللي عندي** | `rpm -qa` |
 
-> ![rpm image](screens/image-125.png)
-> ![rpm search](screens/image-126.png)
-> ![rpm dependencies](screens/image-127.png)
+> ![rpm commands syntax](screens/simple_rpm_cmds.png)
+
+> <!-- ![rpm image](screens/image-125.png) -->
+> <!-- ![rpm search](screens/image-126.png) -->
+> <!-- ![rpm dependencies](screens/image-127.png) -->
 
 > **تفسير `ivh`:**
 > - **i**: Install
@@ -28,7 +31,7 @@
 
 ## 3. الإدارة الذكية (`dnf` / `yum`)
 الـ `dnf` هو المستقبل، بس `yum` لسه شغال (غالباً بيبقى Link لـ `dnf`).
-> ![yum install](screens/image-128.png)
+> <!-- ![yum install](screens/image-128.png) -->
 
 | الحركة | الأمر |
 | :--- | :--- |
@@ -37,6 +40,8 @@
 | **تحديث السيستم** | `sudo dnf update` |
 | **بحث** | `dnf search keyword` |
 | **معلومات** | `dnf info package_name` |
+
+> ![dnf commands syntax](screens/simple_dnf_cmds.png)
 
 ### المخازن (Repositories)
 ملفات الـ `.repo` بتتحط في:

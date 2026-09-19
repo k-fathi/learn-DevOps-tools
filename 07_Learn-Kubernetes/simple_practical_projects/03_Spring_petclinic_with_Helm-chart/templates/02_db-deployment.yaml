@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Release.Name }}-db"
+  namespace: {{.Values.namespace.name}} 
+  labels:
+    tier: {{.Values.database.labels.tier}}
+spec:
+  replicas: {{.Values.database.replicaCount}}
+  selector:
+    matchLabels:
+      tier: {{.Values.database.selectorLabels.tier}}
+  template:
+    metadata:
+      labels:
+        tier: {{.Values.database.selectorLabels.tier}}
+    spec:
+      containers:
+      - name: mydql-db-container
+        image: "{{.Values.database.image.repository}}:{{.Values.database.image.tag}}"
+        imagePullPolicy: {{.Values.imagePullPolicy}}
+        
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{.Values.database.env.MYSQL_ROOT_PASSWORD}}
+        - name: MYSQL_DATABASE
+          value: {{.Values.database.env.MYSQL_DATABASE}}
+        - name: MYSQL_USER
+          value: {{.Values.database.env.MYSQL_USER}}
+        - name: MYSQL_PASSWORD
+          value: {{.Values.database.env.MYSQL_PASSWORD}}
+        ports:
+        - containerPort: {{.Values.database.port}}
+

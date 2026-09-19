@@ -1,0 +1,81 @@
+# Regular Case
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-storage-pod
+spec:
+  containers:
+    - name: hostpath-storage-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: hostpath-storage-type
+          mountPath: /usr/share/nginx/html
+          # Inside the pod, I want to mount this directory to another location in the node  
+    
+  volumes:
+  - name: hostpath-storage-type
+    hostPath:
+      path: /data/
+      type: DirectoryOrCreate # Create the fdirectory /data/ if it doesn't exists
+
+---
+# Another Example
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server-deployment
+  labels:
+    env: prod
+spec:
+  replicas: 3
+  # note: if any replica hosted at any other node, nginx will can not access the volume that we create here in this node
+  # so it will display its default welcome page 
+  # so till now, it is prefered to set the replicas = 1, but here we practise using only single node, so don't worry about volume accessing
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:kube
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+
+        volumeMounts:
+        - name: nginx-shared-vol
+          mountPath: /usr/share/nginx/html
+      
+      volumes:
+        - name: nginx-shared-vol
+          hostPath: 
+            path: /data/website
+            type: DirectoryOrCreate
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: "LoadBalancer"
+  selector: 
+    tier: frontend
+  ports:
+  - port: 80 # the service port that will be exposed to the outside world
+    targetPort: 80 # the port on which the container is listening
+    nodePort: 32000 # the port on which the service will be exposed on each node in the cluster
+
+---
+# kubectl port-forward svc/nginx-service 8088:80
+# minikube ssh 
+# create a file in the node /data/website/index.html
+# echo "Hello from HostPath Volume!" > /data/website/index.html
+# open a browser and go to http://localhost:8088 to see the content of the index.html file served by the nginx container.

@@ -1,0 +1,21 @@
+
+> nginx-visualizer@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 8.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 3.8s (827 modules)
+ GET / 200 in 4904ms
+ ✓ Compiled in 3.3s (827 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/home/karim/Documents/DevOps/learn-DevOps-tools/05_Learn-Nginx/nginx-visualizer/.next/cache/webpack/server-development/0.pack.gz_' -> '/home/karim/Documents/DevOps/learn-DevOps-tools/05_Learn-Nginx/nginx-visualizer/.next/cache/webpack/server-development/0.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/home/karim/Documents/DevOps/learn-DevOps-tools/05_Learn-Nginx/nginx-visualizer/.next/cache/webpack/client-development/4.pack.gz_' -> '/home/karim/Documents/DevOps/learn-DevOps-tools/05_Learn-Nginx/nginx-visualizer/.next/cache/webpack/client-development/4.pack.gz'
+ ✓ Compiled in 65.5s (827 modules)
+ GET / 200 in 663ms
+<w> [webpack.cache.PackFileCacheStrategy] Restoring pack from /home/karim/Documents/DevOps/learn-DevOps-tools/05_Learn-Nginx/nginx-visualizer/.next/cache/webpack/server-development.pack.gz failed: TypeError: Cannot read properties of undefined (reading 'hasStartTime')
+ ✓ Compiled in 4.4s (827 modules)
+[?25h

@@ -1,0 +1,31 @@
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: backofflimit-test
+# spec:
+#   backoffLimit: 4
+#   template:
+#     spec:
+#       restartPolicy: Never
+#       containers:
+#       - name: busybox
+#         image: busybox
+#         command: ["sh", "-c", "echo Hello Kubernetes! && exit 1"]
+#         imagePullPolicy: IfNotPresent
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: example-cronjob
+spec:
+  schedule: "* * * * *" # This cron expression means the job will run every minute
+  jobTemplate:
+    spec:
+        template:
+            spec:
+                containers:
+                - name: example-container
+                  image: busybox
+                  command: ["sh", "-c", "echo Hello, Kubernetes! && sleep 30"]
+                  imagePullPolicy: IfNotPresent 
+                restartPolicy: Never

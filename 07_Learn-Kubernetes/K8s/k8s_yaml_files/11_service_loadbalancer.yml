@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: prod
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: nginx-pod
+      labels: 
+        env: prod
+    spec:
+      containers: 
+        - name: nginx-cont
+          image: nginx:kube
+          ports:
+            - containerPort: 80
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-loadbalancer
+spec:
+  type: LoadBalancer
+  selector: 
+    env: prod
+  ports:
+    - nodePort: 30003
+      port: 30002
+      targetPort: 80

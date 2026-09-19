@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: empty-dir-test-pod
+spec:
+  containers:
+    
+    # First container can read/write data to/from the emptyDir volume
+    - name: empty-dir-test-container-1
+      image: busybox
+      command: ["sh", "-c", "echo 'Hello from emptyDir! container - 1' > /data/xyz/hello-1.txt && sleep infinity"]
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: empty-dir-shared-vol 
+        mountPath: /data/xyz
+    
+    # Second container can read/write data to/from the emptyDir volume
+    - name: empty-dir-test-contaienr-2
+      image: busybox
+      command: ["sh", "-c", "echo 'Hello from emptyDir! container - 2' > /data/xyz/hello-2.txt && sleep infinity"]
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - name: empty-dir-shared-vol
+        mountPath: /data/xyz/ 
+    
+  volumes:
+  - name: empty-dir-shared-vol
+    emptyDir: {}
+

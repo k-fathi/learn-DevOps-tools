@@ -1,0 +1,6 @@
+car_parts:
+  - tires
+  - brakes
+  - engine
+
+grades: ["A","B","C","D","F"]

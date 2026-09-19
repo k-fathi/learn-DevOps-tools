@@ -10,7 +10,9 @@ command1 | command2 | command3
 *Data flows from left to right.*
 
 ### Visual Workflow
-> ![Linux Pipes Workflow](screens/infographic_pipes.png)
+> <!-- ![Linux Pipes Workflow](screens/infographic_pipes.png) -->
+> ![pipe command syntax](screens/simple_pipe_syntax.png)
+> ![xargs concept](screens/simple_xargs_concept.png)
 
 ## 3. Common Examples
 ```bash
